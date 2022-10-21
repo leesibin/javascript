@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    .D1{
+        display: grid;
+        grid-template-columns: 100px 100px  ;
+        grid-template-rows: 100px 100px 100px;
+    }
+    .sp1{
+        background-color: red;
+        grid-column-start:1; 
+            grid-column-end: 5;
+            grid-row-start:1; 
+            grid-row-end: 1;
+
+    }
+    .sp2{
+        background-color: orange;
+        
+        grid-column-start:1; 
+            grid-column-end: 5;
+            grid-row-start:2; 
+            grid-row-end: 5;
+    }
+    .sp3{
+        background-color: yellow;
+        grid-column-start:1; 
+            grid-column-end: 5;
+            grid-row-start:5; 
+            grid-row-end: 1;
+    }
+    .sp4{
+        background-color: yellow;
+        grid-column-start:1; 
+            grid-column-end: 5;
+            grid-row-start:5; 
+            grid-row-end: 1;
+    }
+    .sp5{
+        background-color: blue;
+        grid-column-start:1; 
+            grid-column-end: 1;
+            grid-row-start:5; 
+            grid-row-end: 2;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="D1">
+   <span class="sp1"></span>
+   <span class="sp2"></span>
+   <span class="sp3"></span>
+   <span class="sp4"></span>
+   <span class="sp5"></span>
+</div>
+</body>
+</html>
