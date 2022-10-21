@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+    <style>
+      table th, td{
+        border: 1px solid #000;
+        border-collapse: collapse;
+      }
+      table{
+        border-collapse: collapse;
+        display: flex;
+        justify-content: center;
+        padding-top: 50px;
+      }
+      th{
+        background-color: beige;
+      }
+    </style>
+    <script>
+        let = '';
+        console.log(typeof(list));
+        list =`<table><tr><th>속성</th><th>값</th></tr>`;
+        list+=`<tr><td>Boolean(0)</td><td>${(!!'')}</td></tr>`;
+        list+=`<tr><td>Boolean(NaN)</td><td>${(!!'')}</td></tr>`;
+        list+=`<tr><td>Boolean("")</td><td>${(!!'')}</td></tr>`;
+        list+=`<tr><td>Boolean(null)</td><td>${(!!'')}</td></tr>`;
+        list+=`<tr><td>let 변수</td><td>undefined</td></tr>`;
+        list+=`<tr><td>Boolean(변수)</td><td>${(!!'')}</td></tr>`;
+        list+=`</table>`;
+        document.write(list)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

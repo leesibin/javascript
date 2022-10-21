@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>자료형 변환</title>
+    <script>
+        let num = prompt('숫자를 입력하세요.')
+        console.log(typeof(num))
+        list =''
+        list+="<h3>입력하신" + num +"값은"+  typeof(num)+"타입 입니다."
+        list+="이 타입을 Number 숫자로 변환 하겠습니다....</h3>"
+        list+="<h3>"+Number(num) +"으로 변환 완료</h3> <h4>타입:"+typeof(Number(num)+"</h4>")
+        let str = Number(num)
+        list+="<h3>이 숫자 타입을 Sting변환 하겠습니다....</h3>"
+        list+="<h3>입력하신" + typeof(num) +"값은"+ num +"타입 입니다."
+        list+="<h3>"+typeof(Number(num) +"으로 변환 완료</h3> <h4>타입:"+ Number(num)+"</h4>")
+        document.write(list)
+
+
+    </script>   
+    </head>
+<body>
+    
+</body>
+</html>
