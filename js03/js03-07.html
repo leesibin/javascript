@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Document</title>
+    <script>
+        const M4 = Number(prompt('거스름돈은 얼마입니까'))
+        let M5 = M7 = M9 = M11 = 0
+        if (M4) {
+            M5 = String(`${M4 / 50000}`)
+            M6 = Number(`${M4 % 50000}`)
+        }
+        if (M6) {
+            M7 = String(`${M6 / 10000}`)
+            M8 = Number(`${M6 % 10000}`)
+        }
+        if (M8) {
+            M9 = String(`${M8 / 5000}`)
+            M10 = Number(`${M8 % 5000}`)
+        }
+        if (M10) {
+            M11 = String(`${M10 / 1000}`)
+            M12 = Number(`${M10 % 1000}`)
+        }
+        let parselnt = `<h2>입력하신 <mark>${M4}원</mark>을 거스름으로 분리하면</h2>`
+        parselnt += `<div><table>
+       <tr>
+           <th>잔돈</th>
+           <th>개수</th>
+       </tr>
+       <tr>
+           <td>5만원권</td>
+           <td>${M5}개</td>
+       </tr>
+       <tr>
+           <td>1만원권</td>
+           <td>${M7}장</td>
+       </tr>
+       <tr>
+           <td>5천원권</td>
+           <td>${M9}장</td>
+       </tr>
+       <tr>
+           <td>1천원권</td>
+           <td>${M11}장</td>
+       </tr>
+    </table></div>`
+
+        console.log(parselnt)
+        document.write(parselnt)
+
+
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
