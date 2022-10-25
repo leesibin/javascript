@@ -1,26 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
     <title>구구단표만들기</title>
 </head>
-<body>  
-        <script>
-        let box = '<table>'
-        for(let j=2;j<10;j++){  
-                    
-                    box+=`<tr><td>2x${j}=${j*2}</td></tr>`
-                       }
-        box+=`</table>`
-        
-        let box1 = '<table>'
-        for(let i=2;i<10;i++){  
-                    
-                    box1+=`<tr><td>3x${i}=${i*3}</td></tr>`
-                       }
-        box1+=`</table>`
-            document.write(box)
+
+<body>
+    <script>
+        let GGD = '';
+        for (let i = 1; i < 10; i++) {
+            GGD += `<table>`
+            GGD += `<tr>`
+            for (let j = 2; j < 10; j++) {
+                GGD += `<tr></tr>`
+                GGD += `<td>${j}x${i}</td>`
+                GGD += `</tr>`
+            }
+        } `<table>`
+        document.write(GGD)
     </script>
-    
 </body>
+
 </html>
