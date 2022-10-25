@@ -3,14 +3,47 @@
 
 <head>
     <title>온도계</title>
-    <script>
-        let thermometer = Number(prompt('온도는 몇도입니까?'))
-        if (22=<thermometer28){
+    <style>
+        span{width: 500px;
 
         }
-    </script>
-</head>
+        table{
+            border: 1px solid blue;
+        }
+        
+    </style>
+    <script>
+        let tm  = Number(prompt('온도는 몇도입니까?'))
+        if (tm<28&&tm>=22)
+        {document.write(`온도는${tm}이며, 상태는 보통이에요`)}
+        else if (tm<22&&tm>=16)
+        {document.write(`온도는${tm}이며, 시원하네요`)}
+        else if (tm<16)
+        {document.write(`온도는${tm}이며, 정상온도를 벗어났습니다`)}
+        else if (tm<32&&tm>=28)
+        {document.write(`온도는${tm}이며, 갑갑하네요`)}
+        else if (32>=tm)
+        {document.write(`온도는${tm}이며, 정상온도를 벗어났습니다`)}
+    
 
+        let DG = `<h2>온도계</h2>`
+        DG += `<table>
+            <tr><!--<td>16미만</td>--><!--<td>16미만</td>--><!--<td>16미만</td>--><!--<td>16미만</td>-->16미만</td><td colspan='2'>16미만</th><th>16이상~22이만</th><th></th><th></th><th></th>
+                <th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>
+                <th></th><th></th><th></th><tr>
+                    <span><tr><td>네</td><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>
+                <th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>
+                <th></th><th></th><th></th><tr></span>
+                    <tr><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>
+                <th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th><th></th>
+                <th></th><th></th><th></th><tr>
+            </table>`
+        document.write(DG)
+    
+    </script>
+    
+</head>
+<!--  -->
 <body>
 
 </body>
