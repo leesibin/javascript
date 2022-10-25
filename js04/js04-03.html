@@ -7,10 +7,20 @@
     <script>
         const num =[1,2,3,4,5,6,7,8,9,10];
         // num.splice(3,3) (위치,위치이후로부터 개수)
-        let num_m = num.splice(3,3)
-         
+        // let num_m = num.splice(3,3)
         console.log(num)
-        console.log(num_m)
+        // const inum = num.indexOf(7); 인덱스 위치를 찾는다.
+        
+        let cc= 7
+        let num_m = num.splice(num.indexOf(cc),2)
+        console.log(num)
+        // let num_m = num.splice(num.indexOf(cc),2) 
+        //  indexof((cc),X)는 X의 값이 올라갈때마다 CC지정한값 오른쪽으로 하나씩 제외
+        const str = '동해물과백두산이 마르고'
+        console.log(str.indexOf('백'))
+        console.log(str.indexOf('두산이'))
+        console.log(str.indexOf('마르고'))
+        console.log(str.indexOf('이 마'))
     </script>
 </body>
 </html>
