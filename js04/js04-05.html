@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>for문으로 표만들기</title>
+</head>
+<body>
+    <script>
+        // for (let i=77; i>37; i--){
+        //     document.write(i+'번째입니다.'+'<br>')
+        // }
+        let out = '<table><tr>'
+        for(let i=1; i<9; i++)
+        {out +=`<th>${i*2}</th>`
+        out +=`<tr>${i}</tr>`}
+        out += `</tr></table>`
+        document.write(out)       
+    </script>
+</body>
+</html>

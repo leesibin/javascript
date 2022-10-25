@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>구구단표만들기</title>
+</head>
+<body>
+    <script>
+        let box = '';
+        for(let j=0;j<10;j++){
+            // box+=`${j}`
+            box+=(j+1)+":";
+        for(let i=0; i<10; i++){
+            // box+`${i}`
+            box+=" "+i+" ";
+        }
+
+            box+=`<br>`
+        }
+            document.write(box)
+        
+    </script>
+</body>
+</html>
