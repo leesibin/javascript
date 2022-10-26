@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Break/conitue</title>
+</head>
+<body>
+    <script>
+        /*for 구문 break로 빠져나오기*/
+        // for(let i=0;;i++){
+        //     alert(i+'번째 반복문입니다')
+        //     // 진행 여부를 물어봅니다.
+        //     const q=confirm('계속 진행할까요?')
+        //     if(!q){
+        //         break
+        //     }
+        // }
+
+        /* for 구문 continue로 넘어가기*/
+        // for(let i=0; i<5; i++){
+        //     // 현재작업중지하고 다음반복작업 수행
+        //     continue
+        //     alert(i)
+        // }
+            /*continue를 이용한 넘기기*/
+            let sum =0;
+        for(let i=1; i<=10; i++){
+{
+              if(i%2==1) continue
+                sum+=i
+            }
+            document.write(i+"까지 합은"+sum+"입니다.<br>")
+        }
+    </script>
+</body>
+</html>
