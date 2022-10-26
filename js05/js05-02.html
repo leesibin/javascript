@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let one = Number(prompt('어디서부터 계산할까요?'))
+        let two = Number(prompt('어디서부터 계산할까요?'))
+        let sum = 0;
+        let sum1 = 0;
+        for(let i=one; i<=two; i++){
+            
+            if(i%2==0){
+               sum +=i
+            } if(i%2==1){
+               sum1 +=i
+               
+            }
+            document.write(i+"번째의합은"+(sum+sum1))
+        }
+    
+        </script> 
+</body>
+</html>
