@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let output=''
+        for(let i=1; i<10; i++){
+        for(let j=10; j>i; j--){
+                output +=' '
+            }
+            for(let j=0; j<i*2-1; j++){
+                output +='*'
+            }
+            
+            output +='\n'
+        }
+            
+        console.log(output)
+        let output2=''
+        for(let i=1; i<10; i++){
+        for(let j=0; j<i; j++){
+                output2 +=' '
+            }
+            for(let j=20; j>i*2; j--){
+                output2 +='*'
+            }
+            
+            output2 +='\n'
+        }
+            
+        console.log(output2)
+    </script>
+    
+</body>
+</html>
