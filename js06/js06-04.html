@@ -1,11 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Document</title>
+    <title>1등복권 맛집</title>
 </head>
 <body>
     <script>
-        
+    let BB =[];
+    for(i=0; i<6; i++){CC=BB.push(Math.floor(Math.random()*46));
+        for(let j in BB)
+    if(CC === BB[j]){alert(`중복입니다.`)}
+    
+    BB.sort(function(a,b){return a-b})}
+    document.write(BB)
     </script>
 </body>
 </html>
