@@ -23,28 +23,15 @@
     
 const ran =parseInt(Math.random()*100);
 document.write(ran);
-let AA= '';
-for(let i=0; i<5; i++)
-{AA=Number(prompt('숫자를 입력해주세요'))}
-if(ran=AA){continue(alert('축하드립니다'))}
-else if(ran>AA){(alert(`아무튼 크다${i}`))}
-else if(ran<AA){(alert(`아무튼 작다${i}`))}
-else{
-  // 
-}
+let AA=''
+for(let i=5; i>1; i--){AA=Number(prompt('숫자를 입력해주세요'))
+if(ran==AA){break}
+else if(ran>AA){alert(`아무튼 크다.${i}번 남았어요!`)}
+else if(ran<AA){alert(`아무튼 작다.${i}번 남았어요!`)}
+    }
+if(ran==AA){alert(`축하드립니다 집으로가세요!`)}
+else{alert(`축하못드립니다 집못가세요!`)}
 
-  
-   if(ran==AA){
-      (alert(`축하드립니다 집으로가세요!`))
-   }else{
-    alert(`축하드립니다 집못가세요!`)
-   }
-   
-    
-     
-     
-  
-     
     </script>
 </body>
 </html>
