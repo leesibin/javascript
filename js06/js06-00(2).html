@@ -1,19 +1,21 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <title>배열 추가및 제거</title>
 </head>
+
 <body>
     <script>
-        // const strA='사과/배/바나나/귤/수박/복숭아'
+        const strA = '사과/배/바나나/귤/수박/복숭아'
         // const strA='21/85/54/44/10/7'
         // let result = strA.split("/"); 문자열을 기호를 기점으로 배열로 반환
 
-       
-        const result =[111,5,45,41,90,50]
-        console.log(result);
+
+        // const result = [5, 45, 41, 90, 50]
+        console.log(strA);
         // last = result.join(",") 배열을 기호로 기점으로 문자열로 변환
-        
+
         /*파괴적*/
 
         // let last =result.pop() 마지막요소제거
@@ -22,15 +24,16 @@
         // let last =result.push('파인애플');  마지막요소추가
         // last = result.sort(); 숫자는 안됨, 사전적인 정렬
         // array.sort(function(a,b){return a-b}) 배열내의 숫자가 순차정리
-        
+
         /*비파괴적*/
         // let last= result.slice(3,5)
 
-        
+
         /*결과보기*/
         console.log(last);
         console.log(result);
 
     </script>
 </body>
+
 </html>
