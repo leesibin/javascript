@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>로또다른버전</title>
+</head>
+<body>
+    <script>
+    const lotto=[];
+    let ct = 0
+    while(ct<6){
+        let ran = Math.floor(Math.random()*45)+1
+        if(lotto.indexOf(ran)==-1){
+            lotto.push(ran)
+        }
+        if(lotto.length==6)break;
+    }
+    console.log(lotto)
+</script>
+</body>
+</html>

@@ -2,22 +2,23 @@
 <html lang="en">
 
 <head>
-    <title>1등복권 맛집</title>
+    <title>로또</title>
 </head>
 
 <body>
     <script>
-        let BB = [];
-        for (let i = 0; i < 6; i++) {
-            let CC = Math.floor(Math.random() * 44) + 1
+        const BB = [];
+        for(let k=0; k<2; k++){k[BB]=0;
+        for (let i = 0; i < 6; i++) { 
+            let CC = Math.floor(Math.random() * 45) + 1 //로또번호생성
             for (let j in BB) {
-                if (CC == BB[j]) {CC=Math.floor(Math.random() * 44) + 1}
+                if (CC == BB[j]) {CC=Math.floor(Math.random() * 45) + 1}};
+                BB.push(CC);  //BB배열안에있는 숫자와 CC랜덤과 같다면 다른숫자를 하나 소환
+            }      
                 
-            }
-            BB.push(CC)
-        }
-        BB.sort(function (a, b) { return a - b })
-        document.write(BB)
+                }
+        
+        document.write(`이번주로또번호 ${BB}`)
     </script>
 </body>
 
