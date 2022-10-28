@@ -9,10 +9,10 @@
     <script>
         let BB = [];
         for (let i = 0; i < 6; i++) {
-            let CC = Math.floor(Math.random() * 45) + 1;
+            let CC = Math.floor(Math.random() * 44) + 1
             for (let j in BB) {
-                if (CC == BB[j]) { CC = Math.floor(Math.random() * 45) + 1; };
-
+                if (CC == BB[j]) {CC=Math.floor(Math.random() * 44) + 1}
+                
             }
             BB.push(CC)
         }
