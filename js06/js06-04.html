@@ -7,18 +7,23 @@
 
 <body>
     <script>
-        const BB = [];
-        for(let k=0; k<2; k++){k[BB]=0;
-        for (let i = 0; i < 6; i++) { 
-            let CC = Math.floor(Math.random() * 45) + 1 //로또번호생성
-            for (let j in BB) {
-                if (CC == BB[j]) {CC=Math.floor(Math.random() * 45) + 1}};
-                BB.push(CC);  //BB배열안에있는 숫자와 CC랜덤과 같다면 다른숫자를 하나 소환
-            }      
-                
-                }
-        
-        document.write(`이번주로또번호 ${BB}`)
+        var lotto = [];
+        var lotto_mo = [];
+        var ran = 0;
+
+        for (var j = 0; j < 3; j++) {
+            lotto_mo.push
+
+
+        }
+
+        for (var i = 0; i < 6; i++) {
+            lotto.push(Math.floor(Math.random() * 45) + 1);
+            if (lotto[i] == -1) { lotto.push(Math.floor(Math.random() * 45) + 1) }
+        }
+
+
+        console.log(`이번주 로또 ${lotto}`)
     </script>
 </body>
 
