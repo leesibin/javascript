@@ -1,20 +1,118 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>로또다른버전</title>
+    <title>로또</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <style>        
+        table {            
+            border-collapse: collapse;
+            text-align: center;
+            width: 90%;
+        }
+        tr,td{
+            border: 1px solid black;
+        }
+        tr:nth-child(2n+1) {
+            background-color: antiquewhite;
+        }
+    </style>
 </head>
 <body>
     <script>
-    const lotto=[];
-    let ct = 0
-    while(ct<6){
-        let ran = Math.floor(Math.random()*45)+1
-        if(lotto.indexOf(ran)==-1){
-            lotto.push(ran)
+        const target = Number(prompt('반복할 횟수를 입력하세요.'))
+        console.time("로또엔진"+target+"회 동작");  // 코드시간 측정시작
+    /* 변수선언 */
+        let lotto = ct = 0;
+        let list = result = chart = ''    
+        // let res=[];
+        const box=[];        
+        for(let k=0;k<45;k++)box[k]=0; // 배열 0으로 초기화 
+
+    /* 로또 엔진 */
+        while(ct<target){ 
+            const arr=[];
+            while (arr.length<6){
+                lotto = Math.floor(Math.random()*45)+1
+                if(arr.indexOf(lotto)==-1)arr.push(lotto)
+                }            
+            arr.sort(function(a,b){return a-b})
+        //  res = arr.sort((a, b) => a - b);
+
+    /* 번호별 개수 출력1 */  
+            for(let j=0;j<6;j++)box[arr[j]-1]++
+            ct++ //카운팅
+            result+='['+ct+']:'+arr+"<br>"
         }
-        if(lotto.length==6)break;
+
+    /* 번호별 랭크 */
+    let rank ='평균보다 높은 숫자: '
+    for(let i=0;i<45;i++){
+        if (Math.floor(target/45)*6.5<=box[i]){
+            rank += (i+1)+' '
+        }
     }
-    console.log(lotto)
-</script>
+
+    /* 화면출력 Table */
+        list+='<table>';
+        for(let n=0;n<10;n++){
+            list+='<tr>'
+            if(n%2==0){ // 테이블 제목 
+                for(let m=1;m<=10;m++){
+                    list+=`<td>${m+(n*5)}</td>`
+                }
+            }else{  // 테이블 데이터
+                for(let e=0;e<10;e++){
+                    if((e+(n-1)*5)<45){ // 1 에서 45까지만 출력
+                        list+=`<td>${box[e+(n-1)*5]}</td>`
+                    }else{ // 이후는 무시
+                        list+=`<td> x </td>`
+                    }
+                }
+            }
+            list+='</tr>'
+        }
+        list+='</table>'
+    /* 결과 확인 */
+        chart = `<canvas id="bar-chart-horizontal" width="800" height="450"></canvas>`        
+        document.write(list + chart +rank+ '<br>'+ target+'번을 돌린 결과 기록들:<br>'+result)
+            
+
+    /* 차트 리스트 생성 */    
+    let box_data = box
+    let box_labels = []
+    let box_color = []
+    for (let j=0;j<45;j++){
+        box_labels[j] = `${j+1}번`
+    }
+    for (let i=0;i<9;i++){
+        box_color.push("#3e95cd", "#8e5ea2","#3cba9f","#e8c3b9","#c45850")
+    }
+
+    /* 차트 생성 */ 
+    new Chart(document.getElementById("bar-chart-horizontal"), {
+        type: 'horizontalBar',
+        data: {
+        labels: box_labels,
+        datasets: [
+            {
+            label: "로또 번호별 분석",
+            backgroundColor: box_color,
+            data: box_data
+            }
+        ]
+        },
+        options: {
+        legend: { display: false },
+        title: {
+            display: true,
+            text: '번호별 확률 통계'
+            }
+            }
+        });
+    
+    /* 디버깅 */
+        console.timeEnd("로또엔진"+target+"회 동작")    
+        console.log(box) // 누적숫자배열 확인
+    </script>
 </body>
 </html>

@@ -7,23 +7,19 @@
 
 <body>
     <script>
-        var lotto = [];
-        var lotto_mo = [];
-        var ran = 0;
-
-        for (var j = 0; j < 3; j++) {
-            lotto_mo.push
-
-
-        }
-
+       
+        var lotto = [];//로또 6자리
+        var arr = []; //로또번호 자리갯수
+        var num = 0;
+        for(let k=0; k<45; k++){arr.push(0)}
         for (var i = 0; i < 6; i++) {
-            lotto.push(Math.floor(Math.random() * 45) + 1);
-            if (lotto[i] == -1) { lotto.push(Math.floor(Math.random() * 45) + 1) }
-        }
+            num = (Math.floor(Math.random() * 45) + 1);
+            if (lotto.indexOf(num) == -1) { lotto.push(num) }
+        } 
+        for(let j=0; j<6; j++){arr[lotto[j]]++}
 
-
-        console.log(`이번주 로또 ${lotto}`)
+            console.log(lotto)
+             console.log(arr)
     </script>
 </body>
 
