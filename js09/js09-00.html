@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>그래프(1)</title>
+</head>
+<body>
+    <script>
+        const target = Number(prompt('반복할 횟수를 입력하세요.'))
+        console.time("로또엔진" + target + "회 동작");  // 코드시간 측정시작
+        /* 변수선언 */
+        let lotto = ct = 0;
+        let list = result = chart = ''
+        let res=[];
+        const box = [];
+        for (let k = 0; k < 45; k++)box[k] = 0; // 배열 0으로 초기화 
+
+        /* 로또 엔진 */
+        while (ct < target) {
+            const arr = [];
+            while (arr.length < 6) {
+                lotto = Math.floor(Math.random() * 45) + 1
+                if (arr.indexOf(lotto) == -1) arr.push(lotto)
+            }
+            arr.sort(function (a, b) { return a - b })}
+            //  res = arr.sort((a, b) => a - b);
+            </script>
+</body>
+</html>

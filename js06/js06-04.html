@@ -3,31 +3,89 @@
 
 <head>
     <title>로또</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>
+    <style>
+        table {
+            border-collapse: collapse;
+            text-align: center;
+            width: 90%;
+         }
+
+            tr,td {border: 1px solid black;}
+
+    </style>
 </head>
 
 <body>
+    <canvas id="bar-chart-horizontal" width="800" height="450"></canvas>
     <script>
         var lotto_num = Number(prompt('로또 몇개 사시겠습니까?'))
-        var lotto = [];//로또 6자리
-        var arr = []; //로또번호 자리갯수
-        var num = ct = 0;
-        let result = ''
-        for (let k = 0; k < 46; k++) { arr.push(0) }
+        //로또 6자리
+        var arr = []; //로또번호 자리갯수   
+         var num = ct = 0;
+        let result = list = chart = ''
+        for (let k = 0; k < 46; k++) { arr.push(0) } //배열을0으로 초기화
+        while(ct<lotto_num){
+            var lotto = [];
         for (var i = 0; i < 6; i++) {
             num = (Math.floor(Math.random() * 45) + 1);
             if (lotto.indexOf(num) == -1) { lotto.push(num) }
             lotto.sort(function (a, b) { return a - b })
         }
-        for (let j = 0; j < lotto_num; j++) {
-
-            arr[lotto[j]]++
+            for (let j = 0; j < 6; j++)arr[lotto[j]]++
             ct++
-            result += '[' + ct + ']:' + lotto + "<br>"
+            result += `(${ct})${lotto}<br>`;
+        
+    }
+
+        //표만들기
+        list+= `<table>`
+            for(let i=1;i<10;i++){ 
+                if(i%2=)
+            list+=`<tr>`
+                 for(let j=0;j<10;j++){ 
+                    list+=`<td>${i*j}</td>`
+                    
+                    for(let k=0; k<10; k++){
+                    }
+                }
+            }
+            list+=`</tr>`
+       list+= `</table>`
+       
+
+       /* 차트만들기 */
+       let lotto_num2 =[];
+            for(let i=0; i<46;i++){
+                lotto_num2.push([(i)+"번"])
+            }
+        let lotto_color = []
+        lotto_data = arr
+
+        new Chart(document.getElementById("bar-chart-horizontal"), {
+        type: 'horizontalBar',
+        data: {
+        labels: lotto_num2, 
+        datasets: [
+            {
+            label: "로또 번호 통계",
+            backgroundColor: lotto_color, 
+            data: lotto_data 
+            }
+        ]
+        },
+        options: {
+        legend: { display: false },
+        title: {
+            display: true,
+            text: '로또 번호'
         }
-        document.write(`${lotto_num}번을 돌린 결과 ${result}`)
+        }
+    });
+        
+        document.write(`${list+lotto_num+chart}번을 돌린 결과<br> ${result}`)
         console.log(arr)
-
-
+        console.log(lotto)
 
     </script>
 </body>
