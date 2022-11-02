@@ -4,6 +4,17 @@
     <title>무명함수</title>
 </head>
 <body>
-    
+    <script>
+    let vadd = function add(a,b){
+        return a+b
+        }
+        console.log(vadd(5,10))
+        console.log(typeof(vadd))  //function 으로 나옴
+        let vadd2 = (function(a,b){
+            return a+b+b
+        })(5,10)
+        // console.log(vadd2(15,10))
+        console.log(typeof(vadd2)) //number 로 나옴
+    </script>
 </body>
 </html>
