@@ -37,9 +37,19 @@
     }
     return resultx
     }
+    function max2(arr_in){
+        let resultx = arr_in[2]
+        for(let j=0; j<arr_in.length; j++){
+        if(resultx > arr_in[j]){
+            resultx = arr_in[j]
+        }
+    }
+    return resultx
+    }
     document.write(arr)
     document.write(`<br>최소값은 : ${mix(arr)}`)
     document.write(`<br>최대값은 : ${max(arr)}`)
+    document.write(`<br>최대값은 : ${max2(arr)}`)
     </script>
 </body>
 </html>
