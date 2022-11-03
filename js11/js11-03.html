@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>최소값 / 최대값 구하기</title>
+</head>
+<body>
+    <script>
+        //  function rand(num)(){
+        // let ran =0;
+        // for(let i=0; i<7; i++){
+        //     let ran = Math.floor(Math.random()*100)+1;
+        //     arr[i] =ran
+        // }
+        //     return arr
+        //  }
+        const arr=[]
+        let ran =0;
+        for(let i=0; i<7; i++){
+            let ran = Math.floor(Math.random()*100)+1;
+            arr[i] =ran
+        }
+       function mix(arr_in){
+        let result = arr_in[0]
+        for(let j=0; j<arr_in.length; j++){
+        if(result > arr_in[j]){
+            result = arr_in[j]
+        }
+    }
+    return result
+    }
+    function max(arr_in){
+        let resultx = arr_in[0]
+        for(let j=0; j<arr_in.length; j++){
+        if(resultx < arr_in[j]){
+            resultx = arr_in[j]
+        }
+    }
+    return resultx
+    }
+    document.write(arr)
+    document.write(`<br>최소값은 : ${mix(arr)}`)
+    document.write(`<br>최대값은 : ${max(arr)}`)
+    </script>
+</body>
+</html>

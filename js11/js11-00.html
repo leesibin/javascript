@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>전역변수/지역변수</title>
+</head>
+<body>
+    <h1>변수의 유효 범위(variable scope)</h1>
+    
+    <script>
+        /*전역변수 변경*/
+    //     var num = 100
+    //     function globalN(){
+    //         var num =200
+    //     document.write(`함수 내부에서 변수${num}값은?`)
+    // }
+    // globalN()
+    // document.write(`호출 끝난뒤 변수 값은${num}입니다.`)
+     /*전역변수 변경*/
+    
+     /*전역변수?*/
+        num =100
+        function globalN(){
+            num =200
+        document.write(`함수 내부에서 변수${num}값은?<br>`)
+    }
+    globalN()
+    document.write(`호출 끝난뒤 변수 값은${num}입니다.`)
+    //     let num = 100; 
+    //      function globalN(){
+    //          let num =200;
+    //          document.write(`함수 내부에서 변수${num}값은?<br>`)
+    //  }
+    //     globalN()
+    //  document.write(`호출 끝난뒤 변수 값은${num}입니다.`)
+    </script>
+    
+</body>
+</html>
