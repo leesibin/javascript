@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function min(first, ...rests){
+            let output
+            let items
+                       
+            console.log('===이것이 첫줄===='+first)
+            console.log(typeof(first)) // 확인안됨
+            console.log(Array.isArray(first)) // true (배열이라고 확인)
+            console.log(Array.isArray(first[0])) // false
+            
+            console.log('===이것이 두번째 줄===='+rests)
+            console.log(typeof(rests)) //   'number' 숫자로 확인
+            console.log(Array.isArray(rests)) // false (뭔지모르지만 배열아님)
+            console.log(Array.isArray(rests[0])) // false
+
+            if(Array.isArray(first)){
+                output = first[0]
+                items= first
+            }else if(typeof(first)==='number'){
+                output = first
+                items = rests
+            }
+           
+            for (const item of items){
+                if (output > item){
+                    output = item
+                }
+            }
+            return output
+        }
+
+        console.log(`배열: ${min([66,54,33,11,22,33,44])}`) // 어레이 배열
+        console.log(`숫자: ${min(66,54,33,11,22,33,44)}`) //숫자값들
+    </script>
+</body>
+</html>
