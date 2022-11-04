@@ -5,12 +5,24 @@
 </head>
 <body>
     <script>
+        let v1
+        let v2
         function what(...items){
             // console.log(items)
             return(items)
         }
-        what(11,22,33)
-        what([44,55,66])
+        v1 = what(11,22,33)
+        v2 = what([44,55,66])
+        console.log(v1)
+        console.log(v1[0])
+        // console.log(v1[0][0])
+        console.log(v2)
+        // console.log(v2[0])
+        // console.log(v2[0][0])
+
+        console.log(...v1)
+        console.log(...v2)
+        console.log(v1.length)
     </script>
 </body>
 </html>
