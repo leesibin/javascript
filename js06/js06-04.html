@@ -23,6 +23,8 @@
     <script>
         var lotto_num = Number(prompt('로또 몇개 사시겠습니까?'))
         //로또 6자리
+        let num1 = 0;
+        let num2 = 0;
         var arr = []; //로또번호 자리갯수   
         var num = ct = 0;
         let result = list = chart = ''
@@ -42,15 +44,18 @@
 
         //표만들기
         list += `<table>`
-        for (let i = 1; i < 10; i++) {
-            if (i % 2 == 0) { }
+        for (let i = 0; i < 5; i++) {
+
             list += `<tr>`
             for (let j = 0; j < 10; j++) {
-                list += `<td>${i * j}</td>`
-
-                for (let k = 0; k < 10; k++) {
-                }
+                list += `<td>${num1++}</td>`
             }
+            list += `</tr>`
+            list += `<tr>`
+            for (let k = 0; k < 10; k++) {
+                list += `<td>${arr[num2++]}</td>`
+            }
+
         }
         list += `</tr>`
         list += `</table>`
