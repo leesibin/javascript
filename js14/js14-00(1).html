@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>for 속도</title>
+</head>
+<body>
+    <script>
+        const arr = []
+        for(let i = 0; i<1000000; i++){arr.push(i)}
+
+        console.time('for-length')
+        const cnt = arr.length
+        for(let i= 0; i<arr.length; i++){}
+        console.timeEnd('for-length')
+
+        console.time('for-untill(10000)')
+        for(let i= 0; i<arr.length; i++){}
+        console.timeEnd('for-untill(10000)')
+
+        console.time('for-type(let)')
+        for(let i= 0; i<arr.length; i++){}
+        console.timeEnd('for-type(let)')
+
+        console.time('for-type(var)')
+        for(let i= 0; i<arr.length; i++){}
+        console.timeEnd('for-type(var)')
+
+        console.time('for-type(foreach)')
+        arr.forEach(function(value,index){})
+        console.timeEnd('for-type(foreach)')
+
+        
+        console.time('for-in')
+        for(let idex in fi ){}
+        console.timeEnd('for-in')
+        
+        
+
+
+    </script>
+</body>
+</html>
