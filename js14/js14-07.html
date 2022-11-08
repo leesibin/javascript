@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        const words = ['kiwi','orange','banana','exuberant','destruction','present']
+        /*1번*/
+        const words_n = words.map(value=>value.length) // length 이용한 배열
+        console.log(words_n)
+
+        /*2번*/
+        words
+        .filter(value=>value.length>6)
+        .forEach(value=> console.log(`${value}단어의 글자수는:${value.length}`))
+               
+    </script>
+</body>
+</html>

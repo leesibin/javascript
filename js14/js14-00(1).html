@@ -31,8 +31,13 @@
 
         
         console.time('for-in')
-        for(let idex in fi ){}
+        for(let idex in arr ){}
         console.timeEnd('for-in')
+
+        console.time('for-of')
+        for (let item of arr){}
+        console.timeEnd('for-of')
+
         
         
 
