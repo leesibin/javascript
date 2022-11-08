@@ -5,16 +5,21 @@
 </head>
 <body>
     <script>
-        const arr = []
-        for(i=20;i<91;i++){
-            if(i%2==0){arr[i]=i}
-        } // 20~90까지 짝수배열
-        arr.filter(value=>value>35&&value%10===0)
-           .map(value=>value*2)
-           .forEach((value)=>{
-            console.log(value)
-           })
-        console.log(arr)
+        // const arr = []
+        // for(i=20;i<91;i++){
+        //     if(i%2==0){arr[i]=i}
+        // } // 20~90까지 짝수배열
+        // arr.filter(value=>value>35&&value%10===0)
+        //    .map(value=>value*2)
+        //    .forEach((value)=>{
+        //     console.log(value)
+        //    })
+        // console.log(arr)
+            const arr = []
+            for(let i =20; i<90; i+=2)arr.push(i)
+            arr.filter(value=>value>35&&value%10==0)
+            .map(value=>value*2)
+            .forEach(value => console.log(value)) 
     </script>
 </body>
 </html>
