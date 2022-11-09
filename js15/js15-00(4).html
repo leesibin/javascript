@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reduce응용</title>
+</head>
+<body>
+    <script>
+        ct=0;
+        const arr = Array(100).fill(0).map((v,i)=>v=i+1)
+        // console.log(arr)
+        /*mapping 기능*/
+        const arr_oe = arr.reduce((a,c)=>{
+            a.push(c%2? '짝수':'홀수');
+            return a;
+        },[])
+        console.log(arr_oe)
+
+        /*filter 기능*/
+        const arr_fi1 =arr.reduce((a,c)=>{
+            if(c>=0&&c<=32){arr.push(ct+=2)}
+            if(c>32&&c<70){arr.push(++ct)}
+            if(c>=70&&c<=100){arr.push(ct-=2)}
+            a.push(c);
+            return a
+        },[])
+        arr1= arr.map(v=>v%2==0?v='짝수':v='홀수')
+        
+        arr.forEach((v,i)=>console.log(`${i}번째 수는 ${v} 이고 ${arr1[i]} 이다.`))
+
+        console.log(arr_fi1)
+    </script>
+</body>
+</html>
