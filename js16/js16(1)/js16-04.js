@@ -1,13 +1,16 @@
-     let count = 6;
-    console.log(run)
-    let run =setInterval(()=>{
-        --count
-        console.log(`${count}번째`)
-    },1000)
-
-
-    setTimeout(()=>{ 
-        clearInterval(stop) 
-        alert('펑!')   
-        },6000)
+    setTimeout(()=>{
+            alert('펑!')
+            },6001)
     
+        function fn(){              
+            let count = 6;
+     stop1 =  setInterval(()=>{
+            --count
+            console.log(`${count}번째`)
+        },1000)
+    }
+    function fnx(){
+    setTimeout(()=>{ 
+            clearInterval(stop1)   
+            },1000)
+        }
