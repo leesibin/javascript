@@ -1,8 +1,7 @@
+
+var sec = 55;
+var min = 0;
 function fn() {
-
-    let sec = 55;
-    var min = 55;
-
     time = setInterval(() => {
         sec++
         if (sec > 59) {
@@ -14,9 +13,6 @@ function fn() {
         }
         console.log(`${min}분${sec}초`)
     }, 1000)
+    return
 }
-function fnx() {
-    setTimeout(() => {
-        clearInterval(time)
-    }, 1000);
-}
+
