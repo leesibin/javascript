@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -9,35 +10,37 @@
         delay = setTimeout(() => {
             console.log('3초 후에 실행합니다')
             location.href = 'https://www.google.com/search?'
-        }, 2000);
-       setTimeout(() => {
-        clearTimeout(delay)
-       }, 1000);
-        
+        }, 3000);
+        setTimeout(() => {
+            clearTimeout(delay)
+        }, 1000);
+
         var state = false;
         var count = 5
         var countDown
-        function fn(){
-            countDown = setInterval(function(){
-                if(!state){
-                if(count>0)
-                    console.log(count--)
-                else{
-                    console.log('펑!')
-                    clearInterval(countDown)
+        function fn() {
+            countDown = setInterval(function () {
+                if (!state) {
+                    if (count > 0)
+                        console.log(count--)
+                    else {
+                        console.log('펑!')
+                        clearInterval(countDown)
+                    }
                 }
-            }
-            },1000)
-            }
-            fnx =function(){
-                state = !state 
-                // stare = true
-            }
+            }, 1000)
+        }
+        fnx = function () {
+            state = !state
+            // stare = true
+        }
     </script>
 </head>
+
 <body>
     <button onclick="fn()">나를 눌러봐</button>
     <button onclick="fnx()">나를 멈춰봐</button>
     <button onclick="fnx()">나를 맞춰봐</button>
 </body>
+
 </html>
