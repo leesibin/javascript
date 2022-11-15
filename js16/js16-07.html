@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const COUNTER = (function(){
+            let curr = 0;  //var,let 선언시 외부에서 접근안됨
+            
+            //{}객체를 리턴함.
+            return{
+                getCurrentValue : function(){
+                    return curr;
+                },
+                increaseValue :function(){
+                    curr++;
+                    return curr;
+                },
+                decreaseValue :function(){
+                    if(curr > 0)curr--;
+                    return curr;
+                }            
+            }
+        })()
+        console.log(COUNTER.curr); //private하게 객체의 속성을 보호해줌.
+        console.log(COUNTER.getCurrentValue()); //Closure 현상을 통해 curr값을 가져 올수 있음
+        console.log(COUNTER.increaseValue()); 
+        console.log(COUNTER.decreaseValue());
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
