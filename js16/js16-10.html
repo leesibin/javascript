@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        선언적함수(); //hoisting
+        function 선언적함수(){
+            console.log(`1번째 선언적 함수입니다.`)
+        }
+        function 선언적함수(){
+            console.log(`2번째 선언적 함수입니다.`)
+        }
+        함수표현식 = function(){
+            console.log(`함수표현식`)
+        }
+        // console.log(foo1);
+        // let foo1 = 10; // let일 경우 hoistiong 안됨
+
+        console.log(foo2);
+        var foo2 = 20; // var일 경우 선언은 hoistiong 됨, 할당은 hoisting 안됨
+        console.log(foo2);
+
+        console.log(foo3);
+        foo3 = 30;
+        // var foo3 밑에 var선언이 있을경우 => hoisiting 됨
+        // let foo3 밑에 let선언이 있을경우 => hoisiting 안됨
+         
+    </script>
+</head>
+<body>
+</body>
+</html>
