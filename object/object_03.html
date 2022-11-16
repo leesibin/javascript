@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        const product = {
+            제품명: '70 건조 망고',
+            유형: '당절임'
+        }
+
+        console.log(product['제품명']); console.log(product['유형']);
+        console.log(product.제품명); console.log(product.유형);
+
+        //방법1. 개별 객체 생성
+        const employee1 = {'name': 'a','age': 10,}
+        const employee2 = {'name': 'b','age': 20,}
+        const employee3 = {'name': 'c','age': 30,}
+        var employees = [employee1, employee2, employee3]
+        console.log(employees[0].name);
+        employees.forEach(function(emp, i){
+            console.log(emp.name)
+        })
+
+        //방법2. 생성자와 new를 이용한 객체 생성
+        function employee(name, age) { this.name = name; this.age = age; }
+        const emp1 = new employee('ㄱ',10,)
+        var employees2 = [emp1,new employee('ㄴ',20,),new employee('ㄷ',30,)]
+        console.log(employees2[0].name);
+        employees2.forEach(function(emp, i){
+            console.log(emp.name+"/"+emp.age)
+        })
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,28 +1,29 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-</head>
-<body>
     <script>
-        const pet ={
-            name:'18',
+        const pet = {
+            name: '미야',
             legs: 4,
-            eat(food){
-                document.write(this.name +'이가'+ food + '를먹습니다.')
-            } 
+            eat(food) {
+                document.write(this.name + ' 이가 ' + food + '를 먹습니다')
+            }
         }
         pet.eat('개껌')
-        function replacer(key,value){
-            if(typeof value ==='number')
-            return undefined
+        function replacer(key, value) {
+            if(typeof value === 'number')
+                return undefined;
             return value;
         }
-        console.log(JSON.stringify(pet, replacer , 3))
+        console.log(JSON.stringify(pet, replacer, 3))
         console.log(JSON.stringify(pet));
     </script>
+</head>
+<body>
+    
 </body>
 </html>
