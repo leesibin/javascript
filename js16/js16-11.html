@@ -10,7 +10,7 @@
     <script>
         let numbers = [273, 25, 75, 52, 103, 32, 57, 24, 76]
         const afil = numbers.filter(function(value){
-            return value % 1 === 0 && value<100 && value % 5 === 0 
+            return value % 2 ===1 && value<100 && value % 5 === 0 
         }) //(1)홀수만 (2)100이하 만 (3)5의배수
         console.log(`기존${numbers}`)
         console.log(`결과${afil}`)
