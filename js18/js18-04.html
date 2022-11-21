@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>화살표함수를 사용한 메소드(p252)</title>
+</head>
+<body>
+    <script>
+        const test ={
+            a:function(){
+                setTimeout(function(){
+                console.log(this)
+                },500)
+            },
+            b:function(){
+                setTimeout(()=>{
+                console.log(this)
+            },1000)
+        },
+        누구 : '바로나'
+    }
+        test.a()
+        test.b()
+    </script>
+</body>
+</html>

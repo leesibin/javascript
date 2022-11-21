@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>호이스팅</title>
+</head>
+<body>
+<script>
+    // 호이스팅
+    // 변수의 선언
+    // 함수의 선언이 상단으로 끌어올려져 먼저 값이 들어가지 않고 초기화되는 현상
+    // 호이스팅이 되지않는 상태는 함수를 선언과 동시에 생성할때
+    // const fn = function(){} -> 호이스팅안됨
+    // 호이스팅 결론 : 미리선언해라
+    function fn(){
+        let bb
+        console.log(bb)
+        bb='나는 호이스팅 되었어'
+    }
+fn()
+console.log(bb)
+</script>
+</body>
+</html>
