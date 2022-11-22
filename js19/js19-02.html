@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str1 = '       안녕하세요         '
+        console.log(str1)
+        console.log(str1.trim())
+        let arr=[1,2,3,4,5,6,7,8,9,10]
+        console.log(str1.split('\n'))
+        let str2 = 'a,b,c,d,e,f,g,h'
+        str2_ar =str2.split(',')
+        console.log(str2_ar)
+        
+        let str3 = `제가만약 
+        나비라면 
+        훨훨 
+        날아갈텐데`
+        let str3_ar = str3.split('\n')
+
+        /* trim */
+        // console.log(str3_ar[0].trim())
+        // console.log(str3_ar[1].trim())
+        // console.log(str3_ar[2].trim())
+        // console.log(str3_ar[3].trim())
+        
+        /* for */
+        // for(let i in str3_ar){
+        //     str3_ar[i] = str3_ar[i].trim()
+        // }
+        // console.log(str3_ar)
+        
+        /* map */
+        let str4_ar = str3_ar.map(v=>v=v.trim())
+        console.log(str4_ar)
+
+    </script>
+</body>
+</html>
