@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        // 문서가 읽고 완료 될때까지 기다리는 중
+        document.addEventListener('DOMContentLoaded',()=>{
+            const list = text => `<h1>${text}</h1>`
+            const h1_arr = document.querySelector('#a1')
+            const h2_arr = document.querySelector('#a2')
+            document.body.innerHTML += list('1번째 script 태그')
+            a1.innerHTML= '1번째 HTML 태그'
+            document.body.innerHTML += list('2번째 script 태그')
+            a2.innerHTML= '2번째 HTML 태그'
+            document.body.innerHTML += list('3번째 script 태그')
+        })
+    </script>
+    <script>
+        // document.body.innerHTML += list('1번째 script 태그')  //문서안에 있는 body 안에있는 HTML 작성해라    
+    </script>
+</head>
+<body>
+    <h1 id="a1"></h1>
+    <h1 id="a2"></h1>
+</body>
+</html>

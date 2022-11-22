@@ -29,8 +29,8 @@
             publisher: '위키북스'
         }]
         const output1 = _.orderBy(books, ['name'],['asc']);
-        const output2 = _.orderBy(books, book=>book.name)
-        const output3 = _.orderBy(books, ['price','name'],['desc','asc'])
+        const output2 = _.orderBy(books, x=>x.name) // 위내용을 이것과 같이 포현할수 있다. x.name이 리턴하여
+        const output3 = _.orderBy(books, ['price','name'],['desc','asc']) //가격으로 내림차순, 이름으로 오름차순으로 정렬
         console.log(output1)
         console.log(output2)
         console.log(output3)
