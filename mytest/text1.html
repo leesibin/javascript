@@ -1,32 +1,39 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-var sec = 55;
-var min = 0;
-function fn() {
-    time = setInterval(() => {
-        sec++
-        if (sec > 59) {
-            sec = 0;
-            min++;
-            if (min > 59) {
-                min = 0;
-            }
-        }
-        console.log(`${min}분${sec}초`)
-    }, 1000)
-    return
-}
+        var sec = 55;
+        var min = 0;
+        document.addEventListener('DOMContentLoaded', () => {
+            const header = document.querySelector('h1')
+
+            setInterval(() => {
+                sec++
+                if (sec > 59) {
+                    sec = 0;
+                    min++;
+                    if (min > 59) {
+                        min = 0;
+                    }
+                }
+                header.textContent = `${min}분${sec}초`
+            }, 1000)
+
+
+        })
     </script>
 </head>
+
 <body>
-    <button onclick="fn()">start</button>
-    <button onclick="fnx()">stop</butto>
-        <button onclick="fnxx()">reset</butto>
+    <h1></h1>
+    <button type="button" id="start">start</button>
+    <button onclick="fnx()">stop</button>
+    <button onclick="fnxx()">reset</button>
 </body>
+
 </html>
