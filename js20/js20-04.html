@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            const rects = document.querySelectorAll('.rect');
+            // Array.from 강제로 배열을 만듬
+            
+            Array.from(rects).reduce((acc,cur,ind)=>{
+                const width = (ind+3)*50
+                const hige = (ind+3)*50
+                // const width = (ind+1)*50+100
+                // const hige = (ind+1)*50+100
+                const src = `https://placekitten.com/${width}/${hige}`
+                // cur.setAttribute('src',src)
+                cur.src =src
+                
+               
+                
+            },0)
+        })   
+        
+    </script>
+</body>
+<figure>
+<img src="" alt="" class="rect">
+<figcaption>150x150</figcaption>
+</figure>
+<figure>
+    <img src="" alt="" class="rect">
+    <figcaption>200x200</figcaption>
+    </figure>
+    <figure>
+        <img src="" alt="" class="rect">
+        <figcaption>250x250</figcaption>
+        </figure>
+        <figure>
+            <img src="" alt="" class="rect">
+            <figcaption>300x300</figcaption>
+            </figure>
+            <figure>
+                <img src="" alt="" class="rect">
+                <figcaption>350x350</figcaption>
+                </figure>
+</html>
