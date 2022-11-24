@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            const header = document.createElement('div')
+            const header1 = document.createElement('div')
+            const header2 = document.createElement('h1')
+            const header3 = document.createElement('span')
+
+            header.setAttribute('class','d1')
+            header1.setAttribute('class','d2')
+            header2.textContent ='저를 자바스크립트로 작성해주세요.'
+            header3.textContent = '아주 감사합니다.'
+            header3.style.backgroundColor = 'blue'
+
+            document.body.appendChild(header)
+            header.appendChild(header2)
+            document.body.appendChild(header1)
+            header1.appendChild(header3)
+        })
+    </script>
+</head>
+<body>
+
+</body>
+</html>

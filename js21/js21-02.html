@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            // createElement 태그적용
+            const header = document.createElement('h1')
+            const header1 = document.createElement('h2')
+            const div = document.createElement('div')
+            
+            // const 안에 조건
+            header.textContent = '문서 객체 동적으로 생성하기'
+            header.setAttribute('id','a1')
+            header1.setAttribute('class','b1')
+            header.style.color = 'white'
+            header.style.backgroundColor = 'black'
+            header1.textContent = '나 여기 있어요!!!'
+            header1.style.color = 'black' 
+            header1.style.backgroundColor = 'yellow'
+            
+            //appendChild 출력용으로 설정
+            document.body.appendChild(header) //body안에 header
+            document.body.appendChild(div)    //body안에 div
+            div.appendChild(header1)          //div 안에 header1     
+        })   
+        
+    </script>
+</head>
+<body>
+</body>
+</html>
