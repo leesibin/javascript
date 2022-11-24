@@ -10,6 +10,8 @@
     <script>
         document.addEventListener('DOMContentLoaded',()=>{
             const rects = document.querySelectorAll('.rect');
+            const fig = document.querySelectorAll('figcaption')
+            const lay = document.querySelectorAll('figure') 
             // Array.from 강제로 배열을 만듬
             
             Array.from(rects).reduce((acc,cur,ind)=>{
@@ -20,6 +22,9 @@
                 const src = `https://placekitten.com/${width}/${hige}`
                 // cur.setAttribute('src',src)
                 cur.src =src
+                fig[ind].innerHTML = width +'x'+ hige // 사이즈 달기
+                lay[ind].style.display = 'inline-block' // 그림을 붙이기
+                 lay[ind].style.margin = 0 // 간격없애기
                 
                
                 
@@ -28,6 +33,7 @@
         
     </script>
 </body>
+<div>
 <figure>
 <img src="" alt="" class="rect">
 <figcaption>150x150</figcaption>
@@ -48,4 +54,6 @@
                 <img src="" alt="" class="rect">
                 <figcaption>350x350</figcaption>
                 </figure>
+<div>
+
 </html>
