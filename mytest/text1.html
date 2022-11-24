@@ -9,10 +9,9 @@
     <script>
         var sec = 55;
         var min = 0;
-        document.addEventListener('DOMContentLoaded', () => {
-            const header = document.querySelector('h1')
-
-            setInterval(() => {
+       
+        function fn(){
+            time=setInterval(() => {
                 sec++
                 if (sec > 59) {
                     sec = 0;
@@ -21,17 +20,20 @@
                         min = 0;
                     }
                 }
-                header.textContent = `${min}분${sec}초`
+                stopwatch.textContent = `${min}분${sec}초`
             }, 1000)
-
-
-        })
+    }
+    function fnx(){
+    setTimeout(()=>{ 
+            clearInterval(time)   
+            },1000)
+        }
     </script>
 </head>
 
 <body>
-    <h1></h1>
-    <button type="button" id="start">start</button>
+    <h1 id="stopwatch"></h1>
+    <button onclick="fn()">start</button>
     <button onclick="fnx()">stop</button>
     <button onclick="fnxx()">reset</button>
 </body>
