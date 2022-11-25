@@ -5,7 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <script src="js16(1)/js16-04.js"></script>
+    <script>
+        var count = 2
+            stop1 = setInterval(function(){
+                if(count>0)
+                    (count--)
+                else
+                setTimeout(()=>{ 
+                    if(count<1)
+                       document.write('펑')
+                        clearInterval(stop1)   
+                        },1000)
+                    return
+            },1000)  
+    </script>
+    
 </head>
 <body>
     <button onclick="fn()">나를 눌러봐</button>

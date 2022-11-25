@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    
+    <script>
+        // button.addEventListener('click',fn)
+        // display : none; 태그조차 없음
+        // visibility : hidden; 태그 공간이 남아있음
+        document.addEventListener('DOMContentLoaded',()=>{
+         
+        /*태그 대입*/
+        const header = document.createElement('h1')
+        const div1 = document.createElement('div')
+        const div2 = document.createElement('div')
+        const div3 = document.createElement('div')
+       
+        
+        
+
+        
+        /*조건*/
+         header.textContent = '신호등'
+         div1.setAttribute('class','c1')
+         div1.style.width = '100px'
+         div1.style.height = '100px'
+         div1.style.backgroundColor = 'green'
+         div1.style.borderRadius = '50%'
+
+         div2.setAttribute('class','c2')
+         div2.style.width = '100px'
+         div2.style.height = '100px'
+         div2.style.backgroundColor = 'yellow'
+         div2.style.borderRadius = '50%'
+
+         div3.setAttribute('class','c3')
+         div3.style.width = '100px'
+         div3.style.height = '100px'
+         div3.style.backgroundColor = 'red'
+         div3.style.borderRadius = '50%'
+
+
+         /* 배열로 만들기*/
+
+        //     const divs =  document.querySelectorAll('div')
+        
+        // divs[0].style.width = '100px'
+        //  divs[0].style.height = '100px'
+        //  divs[0].style.backgroundColor = 'green'
+        //  divs[0].style.borderRadius = '50%'
+        //  divs[0].style.visibility = 'hidden'
+         
+
+
+        //  divs[1].style.width = '100px'
+        //  divs[1].style.height = '100px'
+        //  divs[1].style.backgroundColor = 'yellow'
+        //  divs[1].style.borderRadius = '50%'
+         //  divs[1].style.visibility = 'hidden'
+
+        //  divs[2].style.width = '100px'
+        //  divs[2].style.height = '100px'
+        //  divs[2].style.backgroundColor = 'red'
+        //  divs[2].style.borderRadius = '50%'
+         //  divs[2].style.visibility = 'hidden'
+
+         /*출력*/
+        document.body.appendChild(header)
+        document.body.appendChild(div1)
+        div1.appendChild(div4)
+        document.body.appendChild(div2)
+        div2.appendChild(div5)
+        document.body.appendChild(div3)
+        div3.appendChild(div6)
+           
+           
+
+        const div1_green = () =>{
+                div1.style.visibility = 'hidden'
+                setTimeout(div2_green ,1000)
+                
+            }
+        const div2_yellow = () =>{
+            div2.style.visibility = 'hidden'
+                setTimeout(div3_red ,1000)
+                
+            }
+            const div3_red = () =>{
+                div3.style.visibility = 'hidden'
+                setTimeout(div1_green ,1000)
+               
+            }
+           
+            
+        
+        })
+
+    </script>
+</head>
+<body>
+    
+    <!-- 동작버튼을 누르면
+    신호등이
+    초록불 5초간 ->
+    노란불 2초 ->
+    빨간불 3초 ->
+    켜지면서 순회한다.
+    정지버튼을 누르면 멈춘다. -->
+</body>
+</html>

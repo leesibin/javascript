@@ -1,15 +1,16 @@
-var count = 5
+var count = 2
         function fn(){
-            setInterval(function(){
+            stop1 = setInterval(function(){
                 if(count>0)
                     console.log(count--)
                 else
-                    console.log('펑!')
+                setTimeout(()=>{ 
+                    if(count<1)
+                       console.log('펑')
+                        clearInterval(stop1)   
+                        },1000)
                     return
             },1000)
             }
-    function fnx(){
-    setTimeout(()=>{ 
-            clearInterval(stop1)   
-            },1000)
-        }
+    
+        
