@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        /* 태그 설정 */
+        document.addEventListener('DOMContentLoaded',()=>{
+            const header = document.createElement('h1')
+            const div1 = document.createElement('div')
+            const span1 = document.createElement('span')
+            const span2 = document.createElement('span')
+            const div2 = document.createElement('div')
+            const ul = document.createElement('ul')
+            const li1= document.createElement('li')
+            const li2= document.createElement('li')
+            const li3= document.createElement('li')
+            const span3= document.createElement('span')
+            const span4= document.createElement('span')
+            const a1= document.createElement('a')
+            const br= document.createElement('br')
+            const a2= document.createElement('a')
+          
+            /* 조건 */
+           header.textContent = '다음 html 형식을 JS로 작성하시오.'
+           div1.setAttribute('class','c1')
+           span1.textContent = '1. 문서객체 생성하기'
+           span2.textContent = '그리고 추가하기'
+           div2.setAttribute('class','c2')
+           li1.textContent = '생성하고'
+           li2.textContent = '추가하고'
+           li3.textContent = '문서읽고'
+           ul.style.listStyle = 'none'
+            a1.setAttribute('href','https://www.naver.com')
+            a2.setAttribute('href','https://www.daum.net')
+            a1.textContent = '네이버링크'
+            a2.textContent = '다음링크'
+
+            
+
+            
+            /* 출력 */ 
+            document.body.appendChild(header)
+            document.body.appendChild(div1)
+            div1.appendChild(span1)
+            div1.appendChild(span2)
+            document.body.appendChild(div2)
+            div2.appendChild(ul)
+            ul.appendChild(li1)
+            ul.appendChild(li2)
+            ul.appendChild(li3)
+            document.body.appendChild(span3)
+            span3.appendChild(a1)
+            document.body.appendChild(br)
+            document.body.appendChild(span4)
+            span4.appendChild(a2)
+        })
+
+        /*출력 다른버전*/
+        // document.body.appendChild(div1,div2,span1,br1,span2)
+        // div1.appendChild(span1)
+        // div1.appendChild(span2)
+        // div1.appendChild(ul).appendChild(li1,'안녕',li3)
+
+
+        // append Child = return 값이 있음 메소드 체이닝이 됨
+        // appendChild(span).appendChild(a)
+        // append Child = return 값이 없음 메소드 체이닝이 안됨
+        // appendChild(div1,div2,span1,br1,span2)
+    </script>
+</head>
+<body>
+    <!-- <h1>다음 html 형식을 js로 작성하시오.</h1>
+    <div class="c1"></div>
+    <div class="c2"></div> -->
+</body>
+</html>

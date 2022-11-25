@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <script>
-        var sec = 55;
+        var sec = 0;
         var min = 0;
-       
+       /* 시작 */
         function fn(){
             time=setInterval(() => {
                 sec++
@@ -23,16 +23,27 @@
                 stopwatch.textContent = `${min}분${sec}초`
             }, 1000)
     }
+
+    /* 정지 */
     function fnx(){
     setTimeout(()=>{ 
             clearInterval(time)   
-            },1000)
+            },500)
+        }
+
+        /* 초기화 */
+        function fnxx(){
+        setTimeout(()=>{ 
+        sec = 0;    //값을 초기화한다.
+        stopwatch.textContent = `0분0초` 
+            clearInterval(time)   
+            },500)
         }
     </script>
 </head>
 
 <body>
-    <h1 id="stopwatch"></h1>
+    <h1 id="stopwatch">0분0초</h1>
     <button onclick="fn()">start</button>
     <button onclick="fnx()">stop</button>
     <button onclick="fnxx()">reset</button>
