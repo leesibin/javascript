@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+        let bln = false
+        const header = document.createElement('h1')
+        const btn_start = document.createElement('button')
+        const btn_stop = document.createElement('button')
+        const btn_lock = document.createElement('button')
+        const p = document.createElement('p')
+
+
+       
+        btn_start.textContent = '시작'
+        btn_stop.textContent = '정지'
+        btn_lock.textContent = '잠금'
+
+            
+            
+
+            /*시작버튼*/
+            const button_start=()=>{
+                
+             setTimeout(()=>{
+                header.textContent = '안녕하세요.'
+                    document.body.append(header) //왕복
+                },3000) //3초뒤 생성됨
+            }
+
+            /*정지버튼*/
+            const button_stop=()=>{ 
+               setTimeout(()=>{
+                header.style.visibility= 'hidden' 
+               },3000)  
+            }
+
+            /*잠금버튼*/
+          
+            btn_lock.addEventListener('click',()=>{
+                if(bln === true){
+                header.addEventListener('click', button_stop)
+                p.textContent = '잠금!'
+                }
+                else{
+                header.removeEventListener('click', button_stop)
+                p.textContent = '해체!'
+                }
+                console.log(bln)
+                bln=!bln
+                
+               
+            })
+           
+                
+            
+
+        document.body.append(header)
+        document.body.append(btn_start)
+        document.body.append(btn_stop)
+        document.body.append(btn_lock)
+        document.body.append(p)
+        btn_start.addEventListener('click', button_start)
+        btn_stop.addEventListener('click', button_stop)
+        
+        
+
+        
+        
+        
+        })
+    </script>
+</head>
+<body>
+    <!-- 버튼을 누르면
+    3초뒤 다음과 같은 글자가 나타난다.
+    안녕하세요 반갑습니다.(h1)
+    
+    해체버튼을 누르면
+    3초뒤 다음 문구가 사라진다.
+    안녕하세요 반갑습니다.(h1)
+
+    잠금버튼을 누르면
+    동작버튼과 해체버튼이 눌러지지 않는다.
+    잠금버튼을 한번더 누르면
+    동작버튼과 해체 버튼이 동작가능하다 -->
+
+    
+</body>
+</html>

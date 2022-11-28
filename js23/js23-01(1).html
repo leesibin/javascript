@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         document.addEventListener("DOMContentLoaded",()=>{
+            let count = 0;
+
+           const header = document.createElement('h1')
+           const button1 =  document.createElement('button')
+           const button2 =  document.createElement('button')
+          
+
+            header.textContent = `클릭 0`
+            button1.textContent = '연결'
+            button2.textContent = '해체'
+           
+            
+            document.body.append(header)
+            document.body.append(button1)
+            document.body.append(button2)
+            // button1.addEventListener('click', header_on)
+            // button2.addEventListener('click', header_off)
+           
+           
+           header.addEventListener('click',()=>{
+            count++;
+            header.textContent = `클릭${count}`
+           })
+
+           const header_on = () => {
+                if(count<0){
+                    button1.textContent = '연결'
+                    header.addEventListener('Click',button1)
+                }
+            }
+
+           const header_off = () => {
+            if(count>0){
+                header.removeEventListener('Click',button2)
+                button2.textContent = '해체'
+            }    
+           }
+         })
+       
+       
+           
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

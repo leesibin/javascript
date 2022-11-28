@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            let counter = 0;
+            const h1 = document.createElement('h1')
+            const btn_start = document.createElement('button')
+            const btn_stop = document.createElement('button')
+            const p = document.createElement('p')
+            document.body.append(h1 ,btn_start, btn_stop, p)
+            // document.body.append(h1)
+            // document.body.append(btn_start)
+            // document.body.append(h1)
+            // document.body.append(h1)
+            h1.textContent = '클릭횟수:0'
+            h1.style.userSelect = 'none' //글자 선택되는 것을 막기 위한 스타일
+            btn_start.textContent = '이벤트연결'
+            btn_stop.textContent = '이벤트해체'
+            
+            const fn = event =>h1.innerHTML = `<h1>클릭횟수:${counter++}</h1>`
+
+            // counter++; //눌러질때마다 상승한다.
+            // h1.textContent = `클릭횟수:${counter}`
+            
+            btn_start.addEventListener('click',()=>{
+                h1.addEventListener('click',fn)
+                btn_start.innerHTML = '이벤트 연결중'
+                btn_stop.innerHTML = '이벤트 종료'
+                p.innerHTML = '이벤트 연결상태 : 연결중'  
+            })
+
+            btn_stop.addEventListener('click',()=>{
+                h1.removeEventListener('click',fn)
+                btn_start.innerHTML = '이벤트 연결'
+                btn_stop.innerHTML = '이벤트 종료됨'
+                p.innerHTML = '이벤트 연결상태 : 종료됨'
+            
+                
+            })
+            // h1.addEventListener('click', (event)=>{
+            // counter++; //눌러질때마다 상승한다.
+            // h1.textContent = `클릭횟수:${counter}`
+            // })  
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

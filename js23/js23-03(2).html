@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+         document.addEventListener('DOMContentLoaded',()=>{
+        const h1 = document.createElement('h1')
+        const b1 = document.createElement('button')
+        const b2 = document.createElement('button')
+        const bx = document.createElement('button')
+        document.body.append(b1, b2, bx, h1)
+        b1.innerHTML = '동작버튼'
+        b2.innerHTML = '정지버튼'
+        bx.innerHTML = '잠금버튼'
+        let isLock = false
+
+        function eon(){
+            if(!isLock){
+                setTimeout(()=>{
+                    document.body.append(h1)
+                    //왕복하기 위해 추가해야됨
+                    h1.textContent = '안녕하세요.반갑습니다.'
+                },3000)
+        }
+    }
+        function eoff(){
+            if(!isLock){
+            setTimeout(()=>{
+                document.body.removeChild(h1)
+            },3000)
+        }
+    } 
+
+        b1.addEventListener('click',eon)
+        b2.addEventListener('click',eoff)
+
+        // 현상태를 기억하는 변수를 만들것
+        bx.addEventListener('click',()=>{
+           if(isLock){
+           b1.innerHTML = '동작버튼'
+           b2.innerHTML = '정지버튼'
+           bx.innerHTML = '잠금버튼'
+           console.log("이벤트등록됨")
+           }else{
+           b1.innerHTML = '동작잠김'
+           b2.innerHTML = '정지잠김'
+           bx.innerHTML = '잠금잠김'
+           b1.addEventListener('click',eon)
+           b2.addEventListener('click',eoff)
+           console.log("이벤트제거됨")
+           }
+           isLock=!isLock
+           console.log(isLock) 
+        })
+     })
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
