@@ -7,19 +7,31 @@
     <title>Document</title>
     <script>
         document.addEventListener('DOMContentLoaded',()=>{
+            const input =document.createElement('input')
+            const span = document.createElement('span')
+            const br =document.createElement('br')
+            const button =document.createElement('button')
+            const p =document.createElement('p')
+            
+            span.innerHTML = 'inch'
+            button.innerHTML = '계산'
+            input.setAttribute('type', 'text')
+            
+            document.body.append(input, span, br, button, p)
+            
 
-            const header = document.createAttribute('h1')
-            const Header = document.createAttribute('texttarea')
-        
-            const textarea = document.querySelector('textarea')
-            const h1 = document.querySelector('h1')
-            
-            
-            textarea.addEventListener('keyup',(event)=>{
-            const length = textarea.value.length
-            h1.textContent = `글자 수 : ${length}`
-        })
-        document.body.append(h1, textarea)
+            button.addEventListener('click',()=>{
+                // 입력을 숫자로 변환합니다.
+                const inch = Number(input.value)
+                // 숫자가 아니라면 바로 리턴합니다.
+                if(isNaN(inch)){
+                    p.textContent = '숫자를 입력하세요'
+                    return
+                }
+                // 변환해서 출력합니다.
+                const cm = inch *2.54
+                p.textContent = `${cm}cm`
+            })
         })
     </script>
 </head>

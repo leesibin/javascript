@@ -19,7 +19,7 @@
 
         
 
-        b1.addEventListener('click',()=>{
+        b1.addEventListener('click',()=>{  //addEventListener 보여짐
             if(!isLock){
                 setTimeout(()=>{
                     document.body.append(h1)
@@ -32,7 +32,7 @@
         b2.addEventListener('click',()=>{
             if(!isLock){
             setTimeout(()=>{
-                document.body.removeChild(h1)
+                document.body.removeChild(h1) //removeChild 사라짐
             },3000)
         }
         })
@@ -43,12 +43,8 @@
            b1.innerHTML = '동작버튼'
            b2.innerHTML = '정지버튼'
            bx.innerHTML = '잠금버튼'
-           }else{
-           b1.innerHTML = '동작잠김'
-           b2.innerHTML = '정지잠김'
-           bx.innerHTML = '잠금잠김'
            }
-           isLock=!isLock
+           
            console.log(isLock)
            
         
