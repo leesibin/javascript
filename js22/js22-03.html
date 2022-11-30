@@ -53,6 +53,7 @@
             /* 신호등 불빛 조건*/
             const div1_green = () => {
                 div3.style.visibility = 'hidden'   //숨기기
+                div2.style.visibility = 'hidden'   //숨기기
                 div1.style.visibility = "visible"  //생성하기
                 Close1 = setTimeout(div2_yellow, 1000)
             }
@@ -81,7 +82,6 @@
             document.body.appendChild(btnStart)
             document.body.appendChild(btnClose)
             btnStart.addEventListener('click', div1_green)
-            btnStart.addEventListener('click', div2_yellow)
             btnClose.addEventListener('click', Closes)
 
 

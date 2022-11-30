@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>달러 환률 계산기</title>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            const input =document.createElement('input')
+            const span = document.createElement('span')
+            const br =document.createElement('br')
+            const button =document.createElement('button')
+            const p =document.createElement('p')
+            
+            span.innerHTML = '달러'
+            button.innerHTML = '계산'
+            input.setAttribute('type', 'text')
+            
+            document.body.append(input, span, br, button, p)
+            
+
+            button.addEventListener('click',()=>{
+                // 입력을 숫자로 변환합니다.
+                const dollar = Number(input.value)
+                // 숫자가 아니라면 바로 리턴합니다.
+                if(isNaN(dollar)){
+                    p.textContent = '숫자를 입력하세요'
+                    return
+                }
+                // 변환해서 출력합니다.
+                const won = dollar *1313
+                p.textContent = `1313원(환율) x ${dollar}(달러) = ${won}원`
+            })
+        })
+    </script>
+</head>
+<body>
+    <!-- 달러 환률 계산기 
+    환률 1313원 20달러
+    1313 x 20 = ???-->
+    
+</body>
+</html>
