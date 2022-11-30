@@ -12,7 +12,7 @@
             const br =document.createElement('br')
             const button =document.createElement('button')
             const p =document.createElement('p')
-            
+           
             span.innerHTML = '달러'
             button.innerHTML = '계산'
             input.setAttribute('type', 'text')
@@ -23,6 +23,7 @@
             button.addEventListener('click',()=>{
                 // 입력을 숫자로 변환합니다.
                 const dollar = Number(input.value)
+               
                 // 숫자가 아니라면 바로 리턴합니다.
                 if(isNaN(dollar)){
                     p.textContent = '숫자를 입력하세요'
@@ -30,7 +31,9 @@
                 }
                 // 변환해서 출력합니다.
                 const won = dollar *1313
-                p.textContent = `1313원(환율) x ${dollar}(달러) = ${won}원`
+                const text = won.toLocaleString("ko-kr")
+                p.textContent = `1313원(환율) x ${text}(달러) = ${won}원`
+                
             })
         })
     </script>

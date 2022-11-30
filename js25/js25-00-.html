@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>환율 꾸미기편</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const input = document.getElementById("floatingInputValue");
+            const button = document.getElementById('b1')
+            const p = document.getElementsByTagName("p");
+
+
+            const won = 1313
+            button.addEventListener('click',()=>{
+                const dollar =input.value*1
+                // isNaN =숫자가 아니다
+                if(isNaN(dollar)){
+                    p.textContent = '숫자를 입력하세요.'
+                    return;
+                }
+                sum = dollar*won
+                p.textContent = sum.toLocaleString("ko-kr")
+            })
+        })
+    </script>
+</head>
+<!-- 상단메뉴 -->
+<body>
+    <div class="container">
+        <header class="d-flex justify-content-center py-3">
+          <ul class="nav nav-pills">
+            <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Features</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">Pricing</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">FAQs</a></li>
+            <li class="nav-item"><a href="#" class="nav-link">About</a></li>
+          </ul>
+        </header>
+      </div>
+      <span class="badge text-bg-primary">환율계산기</span>
+     
+<!-- 버튼 -->
+    <form class="form-floating">
+        <input type="text" class="form-control" id="floatingInputValue" placeholder="입력하세요" style="width: 300px;">
+        <label for="floatingInputValue">값을 확인하세요</label>
+      </form>
+      
+      <button id="b1" type="button" class="btn btn-outline-primary">계산</button>
+      <p>값</p>
+
+</body>
+</html>
