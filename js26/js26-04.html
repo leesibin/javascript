@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS 스타일 확인</title>
+    <script>
+        // 버튼1 초록 크기 1em
+        // 버튼2 빨간 가운데 정렬 2rem
+        // 버튼3 밑줄 1.5em 파랑
+        // 초기화 버튼
+        // 스타일 값 알아내는 버튼
+    </script>
+</head>
+<body>
+    <h1>cssText의 속성 알아보기</h1>
+    <button>색보여줘</button>
+    <button>정렬보여줘</button>
+    <button>밑줄보여줘</button>
+    <button>초기화보여줘</button>
+    <button>스타일 값보여줘</button>
+    <p></p>
+
+    <script>
+        let h1 = document.querySelector("h1");
+        let p = document.querySelector("p")
+        let button = document.querySelectorAll("button")
+
+        button[0].addEventListener("click",()=>{
+            h1.style.cssText = 'color:#00FF00 ; font-size:1em;'
+            p.innerHTML = h1.style.cssText
+        })
+
+        button[1].addEventListener("click",()=>{
+            h1.style.cssText = 'font-size:2em; color:#FF0000; display: flex; justify-content: center;'
+            p.innerHTML = h1.style.cssText
+        })
+        button[2].addEventListener("click",()=>{
+            h1.style.cssText = 'text-decoration: underline; color:#0000FF; font-size:1.5em; '
+            p.innerHTML = h1.style.cssText
+        })
+
+        button[3].addEventListener("click",()=>{
+                    h1.style.cssText = ''  
+            
+        })
+
+        button[4].addEventListener("click",()=>{
+            p.innerHTML = ''
+            
+            
+        })
+
+
+    </script>
+</body>
+
+</html>

@@ -6,11 +6,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>반복 select 태그</title>
     <style>
-        select{
-            width: 30%;
-            margin: auto;
-            text-align: center;
-            text-align-last: center;
+        body{
+            text-align: center;  
+        }
+        .d1{
+            width: 30%   
         }
         p{
             text-align: center;
@@ -21,19 +21,21 @@
             const select = document.getElementsByTagName('select')
             const p = document.getElementsByTagName('p')
 
-            select.addEventListener('change',(event)=>{
-                const option = event.currentTarget.options
-                const index = event.currentTarget.options.selectedIndedx
+            select[0].addEventListener('change',(event)=>{
+                // const options = event.currentTarget.options
+                // console.log('options'+options)
+                // const index = event.currentTarget.options.selectedIndedx
+                // console.log('index'+index)
 
-                p.textContent = `선택 : ${option[index].textContent}`
+                // p[0].textContent = `선택 : ${options[index].textContent}`
+                // console.log('options[index]' + options[index])
+                p[0].textContent = `선택 : ${event.currentTarget.value}`
             })
-
-
         })
     </script>
 </head>
 <body>
-    <select>
+    <select class="d1">
         <option >떡볶이</option>
         <option >순대</option>
         <option >오뎅</option>
