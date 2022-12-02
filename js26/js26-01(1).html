@@ -24,12 +24,13 @@
             select[0].addEventListener('change',(event)=>{
                 // const options = event.currentTarget.options
                 // console.log('options'+options)
-                // const index = event.currentTarget.options.selectedIndedx
+                // const index = event.currentTarget.options.selectedIndex
                 // console.log('index'+index)
 
                 // p[0].textContent = `선택 : ${options[index].textContent}`
                 // console.log('options[index]' + options[index])
                 p[0].textContent = `선택 : ${event.currentTarget.value}`
+                console.log(select)
             })
         })
     </script>

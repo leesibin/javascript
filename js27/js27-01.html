@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>구글변환프로그램</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const div = document.createElement('div')
+            const input = document.createElement('input')
+            const select = document.createElement('select')
+            const input1 = document.createElement('input')
+            const select1 = document.createElement('select')
+            const selects = document.getElementsByTagName('select')
+            const p = document.createElement('span')
+            const p1 = document.createElement('span')
+            const button = document.createElement('button')
+            document.body.appendChild(div).append(input,select,'=',input1,select1)
+            document.body.append(p,"=", p1,button)
+            
+            p1.textContent = '0'
+            p.textContent = '0'
+            button.textContent = '변환'
+
+            const omenu = ['킬로미터', '미터', '센티미터', '밀리미터', '마이크로미터']
+            for (let menu of omenu) {//메뉴안에 
+            let option = document.createElement('option')
+            select.appendChild(option)
+            option.innerHTML = menu
+            }
+            const omenu1 = ['킬로미터', '미터', '센티미터', '밀리미터', '마이크로미터']
+            for (let menu of omenu1) {
+            let option = document.createElement('option')
+            select1.appendChild(option)
+            option.innerHTML = menu
+            }
+            
+           
+       
+            // 첫번째 값
+            select.addEventListener('change',(event)=>{
+            omenu[0] =1;
+            omenu[1] =10;
+            omenu[2] =1000;
+            omenu[3] =10000;
+            omenu[4] =100000;
+            const num = [...omenu]; //얕은복사
+            const inch = Number(input.value)  // input안의 value 값은 숫자로변환
+            const cm = inch * num[event.currentTarget.options.selectedIndex] // event 타켓 options의 selected 배열의순어
+            p.textContent = `${cm} cm`                                      // select위에 조건에 option값을 여러개 넣었기때문에 options를 사용가능함
+        })
+
+        //두번째 값
+        select1.addEventListener('change',(event)=>{
+            omenu1[0] =10;
+            omenu1[1] =100;
+            omenu1[2] =1000;
+            omenu1[3] =10000;
+            omenu1[4] =100000;
+            const num = [...omenu1]; //얕은복사
+            const inch = Number(input1.value)  // input안의 value 값은 숫자로변환
+            const cm1 = inch * num[event.currentTarget.options.selectedIndex] // event 타켓 options의 selected 배열의순어
+            p1.textContent = `${cm1} cm`
+        })
+        })
+
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

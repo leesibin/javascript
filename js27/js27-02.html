@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>반복 select 태그</title>
+    <style>
+        body{
+            text-align: center;  
+        }
+        .d1{
+            width: 30%   
+        }
+        p{
+            text-align: center;
+        }
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{  
+            const input = document.querySelector('input')
+            const select = document.getElementsByTagName('select')
+            const p = document.getElementsByTagName('p')
+
+            select[0].addEventListener('change',()=>{
+                const inch = Number(input.value)  // input안의 value 값은 숫자로변환
+                const cm = inch * 100 //select 배열 0번을 선택하면 계산 값
+                p[0].textContent = `${cm} cm`
+                console.log(select)
+                
+            })
+        })
+    </script>
+</head>
+<body>
+    <input type="text">
+    <select class="d1">
+        <option >킬로미터</option>
+        <option >미터</option>
+        <option >센티미터</option>
+        <option >마이크로미터</option>
+    </select>
+    =
+    <input type="text">
+    <select class="d2">
+        <option >킬로미터</option>
+        <option >미터</option>
+        <option >센티미터</option>
+        <option >마이크로미터</option>
+    </select>
+   <p></p>
+</body>
+</html>
