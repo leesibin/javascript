@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>체크일때 링크 활성화</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const button = document.createElement('button');
+            const span = document.createElement('span');
+            const br = document.createElement('br');
+            const a = document.createElement('a');
+            
+            document.body.append(button, span,br,a)
+
+            button.setAttribute('type','button');
+            button.textContent = '링크좀떠라!'
+            a.setAttribute('href','https://www.naver.com/');
+            span.textContent = '링크활성화'
+            a.textContent = '네이버 이동'
+
+            let status = false;
+           
+            // input.checked =false
+            button.addEventListener('click',(event)=>{
+                status = event.currentTarget.checked
+            })   
+            a.addEventListener('click')
+        })
+    </script>
+</head>
+<body>
+    <script>
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>체크일때 타이머작동(반복)</title>
+    <script>
+         document.addEventListener("DOMContentLoaded",()=>{
+            const button = document.createElement('button')
+            const input = document.createElement('input')
+            const span = document.createElement('span')
+            const h1 = document.createElement('h1')
+
+            document.body.append(input, span, h1,button)
+
+            input.setAttribute ('type','checkbox')
+            span.textContent = '타이머 활성화'
+            button.textContent = '초기화'
+            h1.textContent = '0초'
+            let [timer,id] =[0,0]
+            input.addEventListener('change',(event)=>{
+                if(event.currentTarget.checked){
+                    id = setInterval(() => {
+                        timer +=1;
+                        h1.innerHTML = timer +'초'
+                    }, 1000);
+                   }else{
+                    clearInterval(id)
+                   }
+            })
+         })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -24,6 +24,7 @@
             button.textContent = '변환'
 
             const omenu = ['킬로미터', '미터', '센티미터', '밀리미터', '마이크로미터']
+            const fix = [1, 0.001, 0.00001, 0.000001, 0,0000001]
             for (let menu of omenu) {//메뉴안에 
             let option = document.createElement('option')
             select.appendChild(option)
@@ -36,8 +37,6 @@
             option.innerHTML = menu
             }
             
-           
-       
             // 첫번째 값
             select.addEventListener('change',(event)=>{
             omenu[0] =1;
@@ -63,6 +62,8 @@
             const cm1 = inch * num[event.currentTarget.options.selectedIndex] // event 타켓 options의 selected 배열의순어
             p1.textContent = `${cm1} cm`
         })
+
+        
         })
 
         
