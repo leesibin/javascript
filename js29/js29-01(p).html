@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라디오버튼활용하기for문</title>
+    <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const h3f = document.createElement('h3')
+            const hr = document.createElement("hr");
+            const h3r = document.createElement('h3')
+            document.body.append(h3f)
+            h3f.style.cssText = ' --ti-cursor-margin-left : 0.1em;--ti-cursor-color: red;color : blue;'
+            h3f.textContent = "#오늘의 포켓몬은 뭐가나올까요?"
+            new TypeIt(h3f)
+                .pause(1000)
+                .delete(7,{delay:1000})
+                .type('피카츄!')
+                .go()
+            
+           
+           
+            const pet = ['피카츄','파이리','꼬북이','이상해씨']
+            for(let pets of pet){
+                let span =  document.createElement('span')
+                let input =  document.createElement('input')
+                document.body.append(input,span)
+                input.type = 'radio'
+                input.name = 'pet'
+                input.value = pets
+                span.innerHTML =pets
+                input.addEventListener('change',(event)=>{
+                let choice = event.currentTarget
+                h3r.innerHTML = `좋아하는 포켓몬은 ${choice.value}`
+                    
+                })       
+            }   
+          
+            document.body.append(hr,h3r)
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

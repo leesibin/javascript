@@ -18,16 +18,25 @@
             span.textContent = '타이머 활성화'
             button.textContent = '초기화'
             h1.textContent = '0초'
+            //타이머 조건
             let [timer,id] =[0,0]
             input.addEventListener('change',(event)=>{
                 if(event.currentTarget.checked){
+                    //시작
                     id = setInterval(() => {
                         timer +=1;
                         h1.innerHTML = timer +'초'
                     }, 1000);
                    }else{
+                    //정지
                     clearInterval(id)
                    }
+                   button.addEventListener('click',(event)=>{
+                    clearInterval(id) //타이머초기화
+                    timer = 0;
+                    h1.innerHTML = timer+'초'
+                    input.checked = false
+                   })
             })
          })
     </script>

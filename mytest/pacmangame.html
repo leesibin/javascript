@@ -5,17 +5,30 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>키로 별이동하기(심화)</title>
+    <style>
+        p{
+            margin: 50px;
+            display: inline-block;
+            padding: 500px;
+            background: #fff;
+            border: 20px solid rgb(180, 180, 93);
+        }
+    </style>
     <script>
         document.addEventListener('DOMContentLoaded',()=>{
             // 별의 초기 설정
             const star = document.createElement('h1')
             const circle =document.createElement('h1')
             const header = document.createElement('h1')
-            document.body.append(star,circle,header)
+            const p = document.createElement('p')
+            document.body.append(header,p)
+            p.append(star,circle)
+           
+            
             // star.innerHTML = '★'
             star.innerHTML = '<img src="./js25img/팩맨.png"> '
             star.style.position = 'absolute'
-            circle.innerHTML = '●'
+            // circle.innerHTML = '●'
 
             let status = true
             let moster = true
@@ -35,10 +48,10 @@
                     circle.innerHTML = '<img src="./mytestimg/몬스터.png"> '
                 }
                 else{
-                    circle.innerHTML = '<iimg src="./mytestimg/몬스터1.png"> '
+                    circle.innerHTML = '<img src="./mytestimg/몬스터1.png"> '
                 }
                 moster = !moster
-            },200)
+            },300)
  
  
 

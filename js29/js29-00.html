@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>typelt타이핑효과</title>
+    <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+    <style>
+        
+    </style>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const h1 = document.createElement('h1')
+            document.body.appendChild(h1);
+            h1.style.cssText = ' --ti-cursor-margin-left : 0.1em;--ti-cursor-color: red;color : blanchedalmond;'
+            h1.textContent = "javascript is my favorite programming lauguage"
+            new TypeIt(h1)
+                .pause(1000)
+                .delete(32,{delay:1000})
+                .type('Best !!!')
+                .go()
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>라디오버튼활용하기</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+        const h3 = document.createElement('h3')
+        const input1 =  document.createElement('input')
+        const input2 =  document.createElement('input')
+        const input3 =  document.createElement('input')
+        const input4 =  document.createElement('input')
+
+        const span1 = document.createElement('span')
+        const span2 = document.createElement('span')
+        const span3 = document.createElement('span')
+        const span4 = document.createElement('span')
+        const br = document.createElement('br')
+        const output = document.createElement('h3')
+        
+        document.body.append(h3,input1,span1,input2,span2,input3,span3,input4,span4,br,output)
+            
+        h3.textContent = '#좋아하는 애완동물 선택해주세요'
+        span1.textContent = '강아지'
+        span2.textContent = '고양이'
+        span3.textContent = '햄스터'
+        span4.textContent = '기타'
+        output.textContent = '좋아하는 동물이 뭘까요?'
+
+        input1.setAttribute('type','radio')
+        input2.setAttribute('type','radio')
+        input3.setAttribute('type','radio')
+        input4.setAttribute('type','radio')
+        
+        
+        input1.setAttribute('name','pet')
+        input2.setAttribute('name','pet')
+        input3.setAttribute('name','pet')
+        input4.setAttribute('name','pet')
+
+        input1.setAttribute('value','강아지')
+        input2.setAttribute('value','고양이')
+        input3.setAttribute('value','햄스터')
+        input4.setAttribute('value','기타')
+
+        input1.addEventListener('click',(event)=>{
+            output.textContent = `좋아하는 동물은 ${input1.value}이시군요`
+        })
+        
+        input2.addEventListener('click',(event)=>{
+            output.textContent = `좋아하는 동물은 ${input2.value}이시군요`
+        })
+        
+        input3.addEventListener('click',(event)=>{
+            output.textContent = `좋아하는 동물은 ${input3.value}이시군요`
+        })
+        
+        input4.addEventListener('click',(event)=>{
+            output.textContent = `좋아하는 동물은 ${input4.value}이시군요`
+        })
+
+       
+        })
+       
+     
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
