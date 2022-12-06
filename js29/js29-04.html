@@ -1,69 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>할일 목록 만들기(두드리스트)</title>
     <style>
-        p{
+        p {
             text-decoration-line: line-through;
             color: rgba(0, 0, 0, 0.4)
         }
     </style>
     <script>
-        document.addEventListener("DOMContentLoaded",()=>{
+        document.addEventListener("DOMContentLoaded", () => {
             const h1 = document.createElement('h1')
             const input = document.createElement('input')
             const button = document.createElement('button')
             const div = document.createElement('div')
-            
-            document.body.append(h1,input,button,div)
 
-            input.setAttribute('id','todo')
-            button.setAttribute('id','add=button')
-            div.setAttribute('id','todo-list')
+            document.body.append(h1, input, button, div)
+
+            input.setAttribute('id', 'todo')
+            button.setAttribute('id', 'add=button')
+            div.setAttribute('id', 'todo-list')
             h1.innerHTML = '할일목록'
             h1.style.color = 'red'
             button.innerHTML = '추가하기'
 
-           //버튼후 생성
-            button.addEventListener('click',(event)=>{
-                
+            //버튼후 생성
+            button.addEventListener('click', (event) => {
+
                 const checkbox = document.createElement('input')
                 const delet = document.createElement('button')
-                delet.setAttribute('onclick','fn()')
                 const span = document.createElement('span')
                 const br = document.createElement('br')
-               
-                checkbox.setAttribute('type','checkbox')
+
+                checkbox.setAttribute('type', 'checkbox')
                 delet.innerHTML = '제거하기'
-                div.append(checkbox, span, delet,br)
+                div.append(checkbox, span, delet, br)
                 // input value 값을 span넣기
                 let work = input.value
                 span.append(work)
                 console.log(div)
-                
+
                 // 체크박스
-                checkbox.addEventListener('click',(event)=>{  
-                   if(event.currentTarget.checked){
-                    span.style.cssText = 'text-decoration-line: line-through; color: rgba(0, 0, 0, 0.4);' 
-                   }
-                   else{
-                    span.style.cssText = 'text-decoration : none;'
-                   }
-                   //제거하기
-                 
-                
-                
+                checkbox.addEventListener('click', (event) => {
+                    if (event.currentTarget.checked) {   //체크가되면
+                        span.style.cssText = 'text-decoration-line: line-through; color: rgba(0, 0, 0, 0.4);'  //스타일 적용
+                    }
+                    else {
+                        span.style.cssText = 'text-decoration : none;'  //아니면 스타일 적용
+                    }
                 })
-             })
- })
+                //삭제하기
+                delet.addEventListener('click', (event) => {
+                    div.removeChild(checkbox)  //div안에 있는 태그  지정후 삭제하기
+                    div.removeChild(span)
+                    div.removeChild(delet)
+
+                })
+            })
+        })
     </script>
 </head>
+
 <body>
-    
+
     <p>나비</p>
-    
+
 </body>
+
 </html>
