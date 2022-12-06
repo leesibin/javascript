@@ -15,19 +15,19 @@
             document.body.append(input,span,br,a)
 
             input.setAttribute('type','checkbox')
+            a.setAttribute('href','https://www.naver.com/')
             span.textContent = '링크활성화'
             a.textContent = '네이버'
-            a.setAttribute('href','https://www.naver.com/')
             
             let status = false
  
             input.addEventListener('change',(event)=>{
-                status = event.currentTarget.checked
+                status = event.currentTarget.checked //체크 전후 설정
             })
            
             a.addEventListener('click',(event)=>{
                 if(!status){
-                    event.preventDefault()
+                    event.preventDefault() //사이트를 띄우지못하게 하는 설정
                 }
             })
         })
