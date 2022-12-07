@@ -1,27 +1,18 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script>
-        var testBtn = document.getElementById('testBtn');
-var clickListener = function() {
-  alert('Hello!');
-};
-testBtn.addEventListener('click', clickListener);
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <script>
+    let arr = [1,2,3,4,5]
 
-// 여기서부터 새로운 버튼 이벤트 GoodBye
-var testByeBtn = document.getElementById('testByeBtn');
-testByeBtn.addEventListener('click', function() {
-  testBtn.removeEventListener('click', clickListener);
-});
-    </script>
-    
+     arr.pop()
+    console.log(arr)
+  </script>
 </head>
 <body>
-    <button id="testBtn">Hello</button>
-<button id="testByeBtn">Good Bye</button>
+  
 </body>
 </html>

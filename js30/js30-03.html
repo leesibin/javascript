@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>localStorage배열활용</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+        const h1 = document.createElement('h1')
+        const p = document.createElement('p')
+        const input = document.createElement('input')
+        const button1 = document.createElement('button')
+        const button2 = document.createElement('button')
+        const button3 = document.createElement('button')
+        const button4 = document.createElement('button')
+        const br = document.createElement('br')
+
+        document.body.append(h1,input,br,button1,button2,button3,button4)
+        
+        input.setAttribute('type','text')
+        button1.textContent = '추가하기'
+        button2.textContent = '전체제거하기'
+        button3.textContent = '중복제거하기'
+        button4.textContent = '마지막삭제하기'
+        
+        const arr= []
+        let key
+        input.addEventListener('keyup',(e)=>{
+            key = e.currentTarget.value
+    })
+        button1.addEventListener('click',(e)=>{
+        const arr_01 = localStorage.getItem('input')  //
+            localStorage.setItem('input',arr)    //
+            arr.push(key)
+            h1.textContent = `글자 : ${arr}`
+            console.log(arr)
+        })
+
+        button2.addEventListener('click',(e)=>{
+            localStorage.clear()
+            console.log(arr)
+            // input.value = ''
+            
+        })
+        button3.addEventListener('click',()=>{
+            const array = arr.filter((v,i)=>{
+            return arr.indexOf(v)=== i;
+            })
+            h1.textContent = `글자 : ${array}`
+            console.log(arr)
+            
+        })
+        button4.addEventListener('click',()=>{
+            arr.pop()
+            h1.textContent = `글자 : ${arr}`
+            console.log(arr)
+        })
+        
+        })
+       
+       
+    </script>
+</head>
+<body>
+    <!-- 배열이 기록
+    배열에요소입력 push
+    배열에 요소 삭제
+    pop
+    모든 요소 삭제 버튼
+    중복 제거 버튼 
+    로컬스토리지에 저장되고 삭제되도록 하라
+    F5를 눌러도 값이 사라지지 않는다. -->
+</body>
+</html>
