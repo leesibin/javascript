@@ -12,6 +12,7 @@
     <style>
         button{
             margin: 5px
+            
         }
     </style>
     <script>
@@ -35,12 +36,11 @@
 
            
             
-            let ready =localStorage.getItem('mem')?? 'null'
+            // ready=='unden'?arr.length=0 :arr = ready.split(',') 
+            // let ready =localStorage.getItem('mem')
             let arr = []  
-            ready=='unden'?arr.length=0 :arr = ready.split(',') 
-            let vin = ''
+            let vin = '' //'' =빈칸일때 false
             p2.innerHTML = arr
-
             input.addEventListener('keyup',(e)=>{
                 vin = e.currentTarget.value
             })
@@ -54,7 +54,7 @@
                     .go()
                     p2.innerHTML = arr
                     
-                    vin=''
+                    // vin=''
                     input.value = vin
                 }else{
                     p1.innerHTML = '값을 넣으세요.'

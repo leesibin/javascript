@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const h1 =document.createElement('h1')
+            const input = document.createElement('input')
+            const button = document.createElement('button')
+            const div = document.createElement('div')
+            h1.textContent = '★할일목록만들기★'
+            button.textContent = '추가하기'
+            document.body.append(h1,input,button,div)
+            
+            let arr = []
+            let vin = ''
+            button.addEventListener('click',()=>{
+                
+                const input1 = document.createElement('input')
+                const span = document.createElement('span')
+                const br = document.createElement('br') 
+                const button1 = document.createElement('button')
+                vin = input.value  
+                input1.setAttribute('type','checkbox')
+                button1.textContent = '제거하기'
+                span.append(vin)
+                div.append(input1,span,button1,br)
+                localStorage.setItem('good',arr)
+                if(vin){
+                    arr.push(vin)
+                }
+            })
+        })
+    </script>
+</head>
+<body>
+    
+</html>
