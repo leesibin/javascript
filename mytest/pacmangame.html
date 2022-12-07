@@ -63,9 +63,12 @@
                 star.style.left = `${x * block}px`
                 star.style.top = `${y * block}px`
             }
+            
             print()
-            const keys = { ArrowLeft: 37, ArrowUp: 38, ArrowRight: 39, ArrowDown: 40 }
-            const { ArrowLeft: left, ArrowUp: up, ArrowRight: right, ArrowDown: down } = keys
+            // 키 값 ArrowLeft 키 값 37을 ArrowLeft : left값을 대입한고
+            // if문 조건에 left값은 37을 의미한다
+            const keys = { ArrowLeft: 37, ArrowUp: 38, ArrowRight: 39, ArrowDown: 40 } //컴퓨터가 정한 키값의 고정 숫자
+            const { ArrowLeft: left, ArrowUp: up, ArrowRight: right, ArrowDown: down } = keys   //키값의 위치 지정을 보여주기
             check = 0;
             document.addEventListener('keydown', event => {
                 check = event.keyCode
