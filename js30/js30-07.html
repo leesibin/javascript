@@ -1,41 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <style>
+        body {
+            background-color: #F7ECD6;
+        }
+
+        h1 {
+            background-color: yellow;
+        }
+
+        button {
+            color: #fff;
+            background-color: rgba(29, 136, 131, 0.89);
+            border: 0;
+        }
+
+        input {
+            margin-left: 10px;
+        }
+
+        .big {
+            margin: 50px;
+            border: 1px solid #000;
+            background-color: blue;
+            width: 300px;
+            height: 300px;
+            box-shadow: 3px 3px 3px;
+        }
+    </style>
     <script>
-        document.addEventListener("DOMContentLoaded",()=>{
-            const h1 =document.createElement('h1')
+        document.addEventListener("DOMContentLoaded", () => {
+            const big = document.createElement('div')
+            const h1 = document.createElement('h1')
             const input = document.createElement('input')
-            const button = document.createElement('button')
+            const add = document.createElement('button')
             const div = document.createElement('div')
+
             h1.textContent = '★할일목록만들기★'
-            button.textContent = '추가하기'
-            document.body.append(h1,input,button,div)
-            
+            add.textContent = '+'
+            big.setAttribute('class', 'big')
+            document.body.appendChild(big).append(h1, input, add, div)
+
             let arr = []
-            let vin = ''
-            button.addEventListener('click',()=>{
-                
-                const input1 = document.createElement('input')
+            let todo = ''
+            //생성버튼 
+            add.addEventListener('click', () => {
+
+                const checkbox = document.createElement('input')
                 const span = document.createElement('span')
-                const br = document.createElement('br') 
-                const button1 = document.createElement('button')
-                vin = input.value  
-                input1.setAttribute('type','checkbox')
-                button1.textContent = '제거하기'
-                span.append(vin)
-                div.append(input1,span,button1,br)
-                localStorage.setItem('good',arr)
-                if(vin){
-                    arr.push(vin)
+                const br = document.createElement('br')
+                const pop = document.createElement('button')
+                const sp = document.createElement('button')
+                todo = input.value
+                checkbox.setAttribute('type', 'checkbox')
+                pop.textContent = '제거하기'
+                span.append(todo)
+                div.append(checkbox, span, pop, br, sp)
+                if (todo) {
+                    arr.push(todo)
                 }
+                localStorage.setItem('good', arr)
+
+
+                //요소제거하기
+                pop.addEventListener('click', () => {
+                    div.removeChild(span)
+                    div.removeChild(checkbox)
+                    div.removeChild(pop)
+                    const top = arr.pop()
+                    input.value = todo
+                    localStorage.setItem('good', arr)
+                })
             })
+
+
+
         })
     </script>
 </head>
+
 <body>
-    
+
 </html>

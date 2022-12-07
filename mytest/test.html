@@ -1,18 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+  <style>
+    .apple {
+      background-color: red;
+    }
+  </style>
   <script>
-    let arr = [1,2,3,4,5]
+    document.addEventListener("DOMContentLoaded", () => {
+      const div = document.querySelector('div')
+      const open = document.getElementById('open')
+      const close = document.getElementById('close')
 
-     arr.pop()
-    console.log(arr)
+      open.textContent = '열기'
+      close.textContent = '제거'
+      open.addEventListener('click', () => {
+        div.setAttribute('class', 'apple')
+      })
+      close.addEventListener('click', () => {
+        div.classList.remove('apple')
+      })
+
+    })
   </script>
+
 </head>
+
 <body>
-  
+  <div>
+    <button id="close"></button>
+  </div>
+  <button id='open'></button>
 </body>
+
 </html>
