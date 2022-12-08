@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로컬스토리지 배열 응용후 애플리케이션</title>
+    <title>로컬스토리지 기능추가</title>
     <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
     <style>
         button{
@@ -43,6 +43,20 @@
             p2.innerHTML = arr
             input.addEventListener('keyup',(e)=>{
                 vin = e.currentTarget.value
+                const ENTER = 13
+                if(e.keyCode === ENTER){
+                    if(vin){
+                    arr.push(vin)
+                    p1.innerHTML = vin + '를 추가 하였습니다.'
+                    p2.innerHTML = arr
+                    vin=''
+                    input.value = vin
+                }else{
+                    p1.innerHTML = '값을 넣으세요.'
+                }
+               
+                localStorage.setItem('mem',arr)
+                }
             })
 
             add.addEventListener('click',(e)=>{
@@ -53,14 +67,17 @@
                     .pause(1000)
                     .go()
                     p2.innerHTML = arr
-                    vin=' '
+                    vin=''
                     input.value = vin
                 }else{
                     vin=' '
                     p1.innerHTML = '값을 넣으세요.'
                     p2.innerHTML = arr
                 }
+               
                 localStorage.setItem('mem',arr)
+                console.log(arr)
+                
             })
             pop.addEventListener('click',(e)=>{
                 const pp = arr.pop()
@@ -74,30 +91,48 @@
                 localStorage.setItem('mem',arr)
             })
             del.addEventListener('click',(e)=>{
+                let status = confirm('하시겠습니까?')
+                if(status){
                 arr.length = 0
                 vin = ''
                 input.value = vin
                 p1.innerHTML = '전부 삭제 완료'
-                p2.innerHTML = '비었음'
+                p2.innerHTML = '비었음'   
+                }else{
+                    p1.innerHTML = '실패했습니다.'
+                    p2.innerHTML = arr
+                }
                 localStorage.setItem('mem',arr)
             })
-            fix.addEventListener('click',(e)=>{
-              
-                const arrs = new Set(arr) //Set 중복제거
+            
+            fix.addEventListener('click',(e)=>{   
+                arr = arr.filter((v)=>{
+                    return(v!=''&&v!=' '&&v!=' '&&v!='  '&&v!=null&&v!=undefined)
+                })
+                const starr = arr.join(',')
+                console.log(starr,typeof starr)
+                let arr0 =starr.replace(' ','')
+                console.log(arr0,typeof arr0)
+                arr = arr0.split(',')
+                console.log(arr,typeof arr)             
+               const arrs = new Set(arr) //Set 중복제거
                 arr = [...arrs] // Array.from(arrs)
                 vin = ''
                 input.value = vin
                 p1.innerHTML = '중복 제거 완료'
                 p2.innerHTML = arr
                 localStorage.setItem('mem',arr)
+                console.log(arr)
             })
             sort.addEventListener('click',(e)=>{
+                
                 arr.sort((a,b)=>a-b)
                 vin = ''
                 input.value = vin
                 p1.innerHTML = '정리완료'
                 p2.innerHTML = arr
                 localStorage.setItem('mem',arr)
+                
             })
         })
     </script>

@@ -7,8 +7,9 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
   <style>
-    .apple {
-      background-color: red;
+ 
+    .close{
+      position: absolute;
     }
   </style>
   <script>
@@ -16,14 +17,20 @@
       const div = document.querySelector('div')
       const open = document.getElementById('open')
       const close = document.getElementById('close')
+      
 
       open.textContent = '열기'
       close.textContent = '제거'
       open.addEventListener('click', () => {
-        div.setAttribute('class', 'apple')
+      
+      div.setAttribute('class','apple')
+      const imgs = document.createElement('img')
+      imgs.setAttribute('src','/webtest/imges/코딩싫어.jpg')
+      div.appendChild(imgs)
       })
       close.addEventListener('click', () => {
         div.classList.remove('apple')
+        div.removeChild(imgs)
       })
 
     })
@@ -33,10 +40,14 @@
 </head>
 
 <body>
+  <button id='open'></button>
   <div>
+
+    <!-- <img class="apple"src="/webtest/imges/코딩싫어.jpg" alt=""> -->
     <button id="close"></button>
   </div>
-  <button id='open'></button>
+  
+  
 </body>
 
 </html>
