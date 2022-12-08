@@ -43,6 +43,7 @@
             p2.innerHTML = arr
             input.addEventListener('keyup',(e)=>{
                 vin = e.currentTarget.value
+                // 엔터기능
                 const ENTER = 13
                 if(e.keyCode === ENTER){
                     if(vin){
@@ -58,7 +59,7 @@
                 localStorage.setItem('mem',arr)
                 }
             })
-
+            //생성
             add.addEventListener('click',(e)=>{
                 if(vin){
                     arr.push(vin)

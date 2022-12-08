@@ -10,41 +10,44 @@
  
     .close{
       position: absolute;
+      margin-bottom: 100px;
     }
   </style>
   <script>
     document.addEventListener("DOMContentLoaded", () => {
-      const div = document.querySelector('div')
+      const div = document.querySelector('.div')
       const open = document.getElementById('open')
-      const close = document.getElementById('close')
-      
-
-      open.textContent = '열기'
-      close.textContent = '제거'
-      open.addEventListener('click', () => {
-      
-      div.setAttribute('class','apple')
-      const imgs = document.createElement('img')
-      imgs.setAttribute('src','/webtest/imges/코딩싫어.jpg')
-      div.appendChild(imgs)
+     
+      open.addEventListener('click',()=>{
+        const close = document.createElement('button')
+        const imgs = document.createElement('img')
+        const br = document.createElement('br')
+        imgs.setAttribute('src','/webtest/imges/코딩싫어.jpg')
+        close.textContent = '닫기'
+        div.append(imgs,close,br)
+        close.addEventListener('click',()=>{
+          imgs.setAttribute('src','#')
+          div.removeChild(imgs)
+          div.removeChild(close)
+          div.removeChild(br)
+          div.classList.remove('open')
+        })
+       document.addEventListener('click',()=>{
+        
+          
+        })
+        
       })
-      close.addEventListener('click', () => {
-        div.classList.remove('apple')
-        div.removeChild(imgs)
       })
-
-    })
+    
 
   </script>
 
 </head>
 
 <body>
-  <button id='open'></button>
-  <div>
-
-    <!-- <img class="apple"src="/webtest/imges/코딩싫어.jpg" alt=""> -->
-    <button id="close"></button>
+  <span id='open' style="background-color: red;">seuponjibab</span>
+  <div class="div">
   </div>
   
   
