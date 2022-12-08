@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,41 +9,43 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
     <script>
-        document.addEventListener("DOMContentLoaded",()=>{
+        document.addEventListener("DOMContentLoaded", () => {
             const select = document.createElement('select')
             const option = document.createElement('option')
             const option1 = document.createElement('option')
             const option2 = document.createElement('option')
             const option3 = document.createElement('option')
-            
+
             select.style.width = '300px'
-            
+
             option.textContent = '오늘의 점심메뉴'
             option1.textContent = '김밥'
             option2.textContent = '떡볶이'
             option3.textContent = '국수'
             select.style.margin = 'auto'
-            
+
 
             document.body.appendChild(select)
             select.appendChild(option)
             select.appendChild(option1)
             select.appendChild(option2)
             select.appendChild(option3)
-             
-            
+
+
         })
-        
+
 
     </script>
 </head>
+
 <body>
-    <!-- <select class="form-select" aria-label="Default select example">
+    <select class="form-select" aria-label="Default select example">
         <option selected>Open this select menu</option>
         <option value="1">One</option>
         <option value="2">Two</option>
         <option value="3">Three</option>
-      </select> -->
-</select>
+    </select>
+    </select>
 </body>
+
 </html>
