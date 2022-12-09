@@ -37,7 +37,7 @@
            
             
             // ready=='unden'?arr.length=0 :arr = ready.split(',') 
-            // let ready =localStorage.getItem('mem')
+            let ready =localStorage.getItem('mem')
             let arr = []  
             let vin = '' //'' =빈칸일때 false
             p2.innerHTML = arr
@@ -98,7 +98,7 @@
                 vin = ''
                 input.value = vin
                 p1.innerHTML = '전부 삭제 완료'
-                p2.innerHTML = '비었음'   
+                p2.innerHTML = arr   
                 }else{
                     p1.innerHTML = '실패했습니다.'
                     p2.innerHTML = arr

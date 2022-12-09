@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todolist 기능</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+            const input = document.createElement('input');
+            const button = document.createElement('button');
+            const div0 = document.createElement('div');
+            const button0 =document.createElement('button')
+            
+            button.setAttribute('id','add')
+            button.textContent = '추가'
+            button0.textContent = '전체닫기'
+
+            document.body.append(input,button, button0, div0);
+            const memo =  localStorage.getItem('memo')
+            let arr= []
+            todo = ''
+            const child =()=>{  //div0에들어가는 태그생성
+                const label = document.createElement('label')
+                const checkbox = document.createElement('input')
+                const br = document.createElement('br')
+                const close = document.createElement('button')
+                checkbox.setAttribute('type','checkbox')
+                close.textContent = '제거'
+                
+                input.value = label
+                div0.append(checkbox, label, close, br)
+                input.value = ''
+                arr.push(label)
+                 // 체크박스
+                 checkbox.addEventListener('change',(e)=>{
+                    if(e.currentTarget.checked){
+                        label.style.cssText = 'text-decoration-line: line-through; color: rgba(0, 0, 0, 0.4);'
+                    }else{
+                        label.style.cssText = 'text-decoration-line: none;'
+                    }
+                })
+                // 닫기
+                close.addEventListener('click',()=>{
+                    arr.pop()
+                    input.value = ''
+                    div0.removeChild(checkbox)
+                    div0.removeChild(label)
+                    div0.removeChild(close)
+                    div0.removeChild(br)
+                    localStorage.setItem('memo',arr)
+                })
+                
+                //전체닫기
+                let status = false;
+                button0.removeEventListener('click',()=>{
+                    
+                })
+                localStorage.setItem('memo',arr)
+          }
+                // 생성
+                button.addEventListener('click',child)
+               
+                
+                //엔터기능 추가
+                let ENTER = 13
+                input.addEventListener('keyup', (event) => {
+                    if (event.keyCode === ENTER) {
+                        child();
+                    }
+                    localStorage.setItem('memo',arr)
+                })
+        })
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
