@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const input = document.createElement('input')
+            const add = document.createElement('button')
+            const div = document.createElement('div')
+
+
+            input.setAttribute('type', 'text')
+            add.innerHTML = '추가'
+
+            document.body.append(input, add, div)
+
+            let arr = [];
+            const save = localStorage.getItem('todo')
+
+            const todotext = () => {
+                const label = document.createElement('label')
+                const close = document.createElement('button')
+                const br = document.createElement('br')
+                const textv = input.value  //input값 지정하기
+                const todoobj = { id: arr.length + 1, text: textv }
+
+                close.innerHTML = '닫기'
+                label.innerHTML = textv
+
+                div.append(label, close, br)
+                arr.push(todoobj) //애플리케이션
+
+                input.value = ''  //입력 후 빈칸
+                console.log(arr)
+
+                //삭제
+                close.addEventListener('click', () => {
+                    arr.pop()
+                    div.removeChild(label)
+                    div.removeChild(close)
+                    div.removeChild(br)
+                    localStorage.setItem('todo', JSON.stringify(arr))
+                })
+                localStorage.setItem('todo', JSON.stringify(arr))
+            }
+            // 생성
+            add.addEventListener('click', todotext)
+            // 엔터
+            input.addEventListener('keypress', (event) => {
+                const ENTER = 13
+                if (event.keyCode === ENTER) {
+                    todotext();
+                }
+            })
+
+        })
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>
