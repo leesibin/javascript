@@ -5,16 +5,29 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>todolist 풀이편</title>
+    <script src="https://unpkg.com/typeit@8.7.0/dist/index.umd.js"></script>
+   <script>
+    document.addEventListener("DOMContentLoaded",()=>{
+        const type = document.querySelector('h1')
+            new TypeIt(type, {speed: 50,})
+            .pause(500)
+            .move(-6)
+            .type("나의 ")
+            .go();
+        })
+   </script>
     <style>  @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gothic+A1&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
         :root{ /*전역변수*/ 
             --bkcolor0:rgb(175, 236, 129);  
-            --bkcolor1:rgb(135, 189, 93);
+            --bkcolor1:rgb(93, 186, 189);
             --bkcolor2:rgb(83, 119, 53);
             --bcolor0:rgb(55, 111, 216);
             --bcolor1:rgb(64, 180, 209);
             --bcolor2:rgb(61, 83, 126);
-            --bcolor3:rgb(33, 47, 71);
-            --bcolor4:r
+            --bcolor3:rgb(161, 46, 46);
+            --bcolor4:rgb(255, 255, 255);
+            --bcolor5:rgb(53, 104, 110);
+            --bcolor6:rgb(33, 64, 68);
         }
         body{
             display: flex;
@@ -28,7 +41,7 @@
         .container{
             padding: 30px;
             border-radius: 20px;
-            background-color: var(--bkcolor0);
+            background-color: var(--bkcolor1);
             height: auto;
             width:  100%;
             max-width: 25rem; /*넓이 최대 설정*/
@@ -61,13 +74,62 @@
             border: 1px solid rgba(0,0,0,0.5);
             background-color: var(--bcolor0);
         }
-        #sel-del{
+        
+        button{
+            width: 80px;
+            height: 40px;
+            margin: 3px;
+            border-radius: 10px;
             background-color: var(--bcolor1);
+            border: 1px solid rgba(0,0,0,0.5);
+            color: var(--bcolor3);
+            font-size: 1em;
         }
-        #all-del{
-            background-color: var(--bcolor1);
+        button:hover{
+            width: 80px;
+            height: 40px;
+            margin: 3px;
+            border-radius: 10px;
+            background-color: var(--bcolor3);
+            border: 1px solid rgba(0,0,0,0.5);
+            color: var(--bcolor4);
+            font-size: 1em;
         }
-
+        .input-set{
+            height: 40px;
+            margin-bottom: 9px;
+        }
+        .list-card{
+            background-color: var(--bcolor5);
+            border-radius: 10px;
+            color: white;
+            max-width: 85%;
+            height: 45px;
+            padding: 10px;
+            margin: 0 0 10px 0;
+            overflow: hidden;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+        .list-card:hover{
+            transition: 1s ease; /*1초뒤 부드럽게 넘어감*/
+            background-color: var(--bcolor6);
+            border-radius: 10px;
+            color: white;
+            max-width: 100%;
+            height: auto; /*값이 늘어남*/
+            padding: 10px;
+            margin: 0 0 10px 0;
+            overflow: hidden;
+            white-space: normal;
+            word-wrap: break-word;
+        }
+        h2{
+            margin: 0px;
+            overflow: hidden;
+            white-space: normal;  /*영어가 깨질때사용*/
+            word-wrap: break-word; /*입력값이 넘칠때 끊어주는 거,입력값이 깨져도되니깐 컷트해라*/
+        }
     </style>  
     <script>
 
@@ -77,12 +139,28 @@
     <div class="container">
         <div class="main">
             <h1>할일 목록</h1>
-            <div><input type="text" id="new-input">
+            <div class="input-set"><input type="text" id="new-input">
                 <input type="button" id="new-add" value="할일추가"></div>
                 <button id="sel-del">완료제거</button>
                 <button id="all-del">모두제거</button>
             </div>
-        <div id="list"></div>
+            <hr>
+            <div id="list">
+    
+            <div class="list-card">
+                <span>체크</span>
+                <input type="checkbox">
+                <!-- <button>삭제</button> -->
+                 <h2>안녕하세요.반가워요.반가워요.반가워요.반가워요.반가워요.반가워요.반가워요.</h2>
+                </div>
+                <div class="list-card">
+                    <span>체크</span>
+                    <input type="checkbox">
+                    <!-- <button>삭제</button> -->
+                     <h2>aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</h2>
+                    </div>
+                </div> 
+        </div>
     </div>   
 </body>
 </html>
