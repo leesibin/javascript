@@ -36,9 +36,9 @@
 
            
             
-            // ready=='unden'?arr.length=0 :arr = ready.split(',') 
-            let ready =localStorage.getItem('mem')
+            let ready =localStorage.getItem('mem')??'unden'
             let arr = []  
+            ready=='unden'?arr.length=0 :arr = ready.split(',') 
             let vin = '' //'' =빈칸일때 false
             p2.innerHTML = arr
             input.addEventListener('keyup',(e)=>{

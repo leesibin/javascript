@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>todolist 풀이편</title>
+    <style>  @import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Gothic+A1&family=Noto+Sans+KR:wght@300;400;500;700&display=swap');
+        :root{ /*전역변수*/ 
+            --bkcolor0:rgb(175, 236, 129);  
+            --bkcolor1:rgb(135, 189, 93);
+            --bkcolor2:rgb(83, 119, 53);
+            --bcolor0:rgb(55, 111, 216);
+            --bcolor1:rgb(64, 180, 209);
+            --bcolor2:rgb(61, 83, 126);
+            --bcolor3:rgb(33, 47, 71);
+            --bcolor4:r
+        }
+        body{
+            display: flex;
+            justify-content: center;  /*가로센터*/
+        }
+        body,button,input{  /*폰트*/
+            font-family: 'Black Han Sans', sans-serif;
+            font-family: 'Gothic A1', sans-serif;
+            font-family: 'Noto Sans KR', sans-serif;
+        }
+        .container{
+            padding: 30px;
+            border-radius: 20px;
+            background-color: var(--bkcolor0);
+            height: auto;
+            width:  100%;
+            max-width: 25rem; /*넓이 최대 설정*/
+        }
+        h1{
+            text-align: center;
+            margin: 0 0 10px 0;
+        }
+        #new-input{
+            font-size : 1em;
+            font-weight: bold; /*글자 진하게*/
+            margin: 0px;
+            width: 75%;
+            height: 100%;  
+            padding: 5px;
+            border-radius: 20px 0 0 20px;
+            display: inline;
+            box-sizing: border-box;
+            border: 1px solid rgba(0,0,0,0.5);
+        }
+        #new-add{
+            font-size: 1em;
+            margin-left: -5px;
+            width: 25%;
+            height: 100%;
+            padding: 5px;
+            border-radius: 0 20px 20px 0;
+            display: inline;
+            box-sizing: border-box;
+            border: 1px solid rgba(0,0,0,0.5);
+            background-color: var(--bcolor0);
+        }
+        #sel-del{
+            background-color: var(--bcolor1);
+        }
+        #all-del{
+            background-color: var(--bcolor1);
+        }
+
+    </style>  
+    <script>
+
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="main">
+            <h1>할일 목록</h1>
+            <div><input type="text" id="new-input">
+                <input type="button" id="new-add" value="할일추가"></div>
+                <button id="sel-del">완료제거</button>
+                <button id="all-del">모두제거</button>
+            </div>
+        <div id="list"></div>
+    </div>   
+</body>
+</html>
