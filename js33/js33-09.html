@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        class Wizard{
+            constructor(helth,mana,armor){  //constructor =new
+            this.helth = helth
+            this.mana = mana
+            this.armor = armor
+            }
+            attack(){
+                console.log('파이어볼')
+            }
+            magic(){
+                console.log('크리스마스 눈')
+            }
+        }
+        const x = Wizard(545, 210, 10);
+        console.log(x.helth, x.mana, x.armor) 
+        x.attack()
+     
+
+    </script>
+</head>
+<body>
+    <!-- 결과물 const x = Wizard(545, 210, 10);
+    console.log(x.helth, x.mana, x.armor) 
+x.attack()-->
+    <!-- 출력: 545 210 10
+    파이어볼 -->
+</body>
+</html>

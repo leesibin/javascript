@@ -257,15 +257,23 @@
                 chk.addEventListener('click',(e)=>{
                     ck = e.currentTarget.checked ? true : false
                     listCard.setAttribute('class',isChecked(ck))
-                    list.setAttribute('class',ck?'showB':'no-showB')
+                    listB.setAttribute('class',ck?'showB':'no-showB')
                     span.textContent = ck? '완료' : '체크'
                     search(e.currentTarget.id.slice(1)) //slice를 쓰지않으면 id 본질인 i0나오지만 slice 사용하여 i를 없애준다.
                     edata[fck].check = e.currentTarget.checked ? true : false // 체크햇을때 애플리케이션 true,false 나오게한다.
                     localsave(edata)
                     
                 })
-
+                listB.addEventListener('click',()=>{
+                    edata.pop()
+                     list.removeChild(listCard)
+                     localsave(edata)
+                })
                
+               allDel.addEventListener('click',()=>{
+                list.removeChild(listCard)
+                localStorage.clear()
+               })
             }
             })
        </script>
