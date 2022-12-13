@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class의 고급기능</title>
+    <script>
+        class Rectangle{
+            constructor(width, height) {
+                this.width = width
+                this.height = height
+            }
+            getP(){
+                return 2*(this.width + this.height)
+            }
+            getA(){
+                return this.width *this.height
+            }
+        }
+
+        const rectangle = new Rectangle(10, 20)
+        console.log(`사각형의 둘레:${rectangle.getP()}`)
+        console.log(`사각형의 넓이:${rectangle.getA()}`)
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

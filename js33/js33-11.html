@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class의 고급기능(상속)</title>
+    <script>
+        class Rectangle{
+            constructor(width, height) {
+                this.width = width
+                this.height = height
+            }
+            getP(){
+                return 2*(this.width + this.height)
+            }
+            getA(){
+                return this.width *this.height
+            }
+        }
+        class square extends Rectangle{  //부모 square 자식 Rectangle
+            constructor(length){
+                super(length,length)   //constructor(width, height) 값을 가져옴
+            }
+        }
+        const squarea = new square(10,20)
+        console.log(`정사각형의 둘레:${squarea.getP()}`)
+        console.log(`정사각형의 넓이:${squarea.getA()}`)
+       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

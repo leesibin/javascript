@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class의 고급기능(get키워드 set키워드)</title>
+    <script>
+        class square{  //부모 square 자식 Rectangle
+            #length
+            constructor(length){
+               
+                this.length = length
+
+            }
+            get length(){
+                return this.#length
+            }
+            getP(){
+                return 4*this.#length
+            }
+            getA(){
+                return this.#length *this.#length
+            }
+            set length(length){
+                if(length <=0){
+                    throw '길이는 0보다 커야 합니다.'
+                }
+                this.#length = length
+            }
+        }
+        const squarea = new square(10)
+        console.log(`한 변의 길이 :${squarea.length}`)
+        console.log(`둘레:${squarea.getP()}`)
+        console.log(`넓이:${squarea.getA()}`)
+       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

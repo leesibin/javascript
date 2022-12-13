@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>class의 고급기능(private 속성1)</title>
+    <script>
+        class square{  //부모 square 자식 Rectangle
+            #length
+            constructor(length){
+                if(length<=0){throw '길이는 0보다 커야합니다.'}
+                this.#length = length
+
+            }
+            getP(){
+                return 4*this.#length
+            }
+            getA(){
+                return this.#length *this.#length
+            }
+        }
+        const squarea = new square(10)
+        console.log(`정사각형의 둘레:${squarea.getP()}`)
+        console.log(`정사각형의 넓이:${squarea.getA()}`)
+       
+    </script>
+</head>
+<body>
+    
+</body>
+</html>
