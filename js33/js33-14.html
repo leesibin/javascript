@@ -16,23 +16,23 @@
             get length(){
                 return this.#length
             }
-            getP(){
+            get P(){
                 return 4*this.#length
             }
-            getA(){
+            get A(){
                 return this.#length *this.#length
             }
             set length(length){
                 if(length <=0){
                     throw '길이는 0보다 커야 합니다.'
                 }
-                this.#length = length
+                this.#length = length  //#이 들어가게 고정값이 되지만 set을 사용하므로 고정값도 변경이 가능하게 됩니다.
             }
         }
         const squarea = new square(10)
         console.log(`한 변의 길이 :${squarea.length}`)
-        console.log(`둘레:${squarea.getP()}`)
-        console.log(`넓이:${squarea.getA()}`)
+        console.log(`둘레:${squarea.P}`)
+        console.log(`넓이:${squarea.A}`)
        
     </script>
 </head>
