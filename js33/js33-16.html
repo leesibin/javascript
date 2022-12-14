@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>class의 고급기능(get키워드 set키워드)3번째</title>
     <script>
-         class Person{
+         class Person{  //_내부적으로 함수를 쓰겠다는 표현 #내부에서 사용가능함
             constructor(name, age, gender){
                 this.name = name
                 this.age = age
@@ -22,7 +22,7 @@
                     this.#age = value
                 print()
                 {
-                    console.log('이름:'+this.name + '나이:' + this._age + '성별:'+this.gender)
+                    console.log('이름:'+this.name + '나이:' + this.#age + '성별:'+this.gender)
                 
                 }
             }

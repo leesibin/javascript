@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>static 예제</title>
+    <script>
+        class Article{
+            constructor(title, date){
+                this.title=title
+                this.date=date
+            }
+            static compare(articleA,articleB){
+                return articleA.date - articleB.date
+            }
+            static dcompare(articleA,articleB){
+                return articleB.date - articleA.date
+            }
+        }
+
+        //사용하기
+        let articles =[
+            new Article('HTML',new Date(2022,10,1)),
+            new Article('CSS',new Date(2022,9,1)),
+            new Article('Javascript',new Date(2022,12,1)),
+        ]
+
+        articles.sort(Article.dcompare) //sort(콜백함수)
+
+        console.log(articles[0].title)
+        console.log(articles[1].title)
+        console.log(articles[2].title)
+    </script>
+</head>
+<body>
+    <!--  -->
+</body>
+</html>
