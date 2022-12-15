@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <script>
+        // button.addEventListener('click',fn)
+        // display : none; 태그조차 없음
+        // visibility : hidden; 태그 공간이 남아있음
+        document.addEventListener('DOMContentLoaded', () => {
+
+            /*태그 대입*/
+            const header = document.createElement('h1')
+            const div1 = document.createElement('div')
+            const div2 = document.createElement('div')
+            const div3 = document.createElement('div')
+            const div0 = document.createElement('div')
+            const btnStart = document.createElement('button')
+            const btnClose = document.createElement('button')
+
+
+            /* 조건 */
+            header.textContent = '신호등'
+            //초록
+            div1.setAttribute('class', 'c1')
+            div1.style.width = '100px'
+            div1.style.height = '100px'
+            div1.style.backgroundColor = 'green'
+            div1.style.borderRadius = '50%'
+            div1.style.visibility = 'hidden'
+            //노랑
+            div2.setAttribute('class', 'c2')
+            div2.style.width = '100px'
+            div2.style.height = '100px'
+            div2.style.backgroundColor = 'yellow'
+            div2.style.borderRadius = '50%'
+            div2.style.visibility = 'hidden'
+            //빨강
+            div3.setAttribute('class', 'c3')
+            div3.style.width = '100px'
+            div3.style.height = '100px'
+            div3.style.backgroundColor = 'red'
+            div3.style.borderRadius = '50%'
+            div3.style.visibility = 'hidden'
+            //버튼
+            btnStart.textContent = 'start'
+            btnClose.textContent = 'Close'
+
+            /* 신호등 불빛 조건*/
+            const div1_green = () => {
+                div3.style.visibility = 'hidden'   //숨기기
+                div2.style.visibility = 'hidden'   //숨기기
+                div1.style.visibility = "visible"  //생성하기
+                Close1 = setTimeout(div2_yellow, 1000)
+            }
+            const div2_yellow = () => {
+                div1.style.visibility = 'hidden'
+                div2.style.visibility = "visible"
+                Close2 = setTimeout(div3_red, 1000)
+            }
+            const div3_red = () => {
+                div2.style.visibility = 'hidden'
+                div3.style.visibility = "visible"
+                Close3 = setTimeout(div1_green, 1000)
+            }
+            /*정지 버튼*/
+            const Closes = () => {
+                clearTimeout(Close1)
+                clearTimeout(Close2)
+                clearTimeout(Close3)
+            }
+
+            /*출력*/
+            document.body.appendChild(header)
+            document.body.appendChild(div1)
+            document.body.appendChild(div2)
+            document.body.appendChild(div3)
+            document.body.appendChild(btnStart)
+            document.body.appendChild(btnClose)
+            btnStart.addEventListener('click', div1_green)
+            btnClose.addEventListener('click', Closes)
+
+
+        })
+
+    </script>
+</head>
+
+<body>
+
+    <!-- 동작버튼을 누르면
+    신호등이
+    초록불 5초간 ->
+    노란불 2초 ->
+    빨간불 3초 ->
+    켜지면서 순회한다.
+    정지버튼을 누르면 멈춘다. -->
+</body>
+
+</html>

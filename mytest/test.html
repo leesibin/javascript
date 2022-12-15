@@ -11,6 +11,8 @@
     .close{
       position: absolute;
       margin-bottom: 100px;
+      width: 100px;
+      height: 100px;
     }
   </style>
   <script>
@@ -20,9 +22,9 @@
      
       open.addEventListener('click',()=>{
         const close = document.createElement('button')
-        const imgs = document.createElement('img')
+        const imgs = document.createElement('div')
         const br = document.createElement('br')
-        imgs.setAttribute('src','/webtest/imges/코딩싫어.jpg')
+        imgs.style.cssText = 'background-color: red; width: 100px;height: 100px;'
         close.textContent = '닫기'
         div.append(imgs,close,br)
         close.addEventListener('click',()=>{
@@ -32,10 +34,7 @@
           div.removeChild(br)
           div.classList.remove('open')
         })
-       document.addEventListener('click',()=>{
-        
-          
-        })
+
         
       })
       })

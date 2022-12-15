@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<!-- saved from url=(0118)file:///C:/Users/ds/Downloads/Telegram%20Desktop/my07_%EC%9B%B9%ED%8E%98%EC%9D%B4%EC%A7%80%EC%98%88%EC%A0%9C_lec0.html -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>웹페이지 수동</title>
+    <script>
+        document.addEventListener("DOMContentLoaded",()=>{
+        // 타이틀
+        const title = document.createElement('h1')
+        // 디브1
+        const div1 = document.createElement('div')
+        
+        // 5개의 버튼 생성
+        const about = document.createElement('button')
+        const products = document.createElement('button')
+        const technology = document.createElement('button')
+        const downloads = document.createElement('button')
+        const etc = document.createElement('button')
+
+        // p생성
+        const p = document.createElement('p')
+        
+        // 버튼의 클래스 지정 
+        about.setAttribute('class','btn')
+        products.setAttribute('class','btn')
+        technology.setAttribute('class','btn')
+        downloads.setAttribute('class','btn')
+        etc.setAttribute('class','btn')
+
+        // 각 버튼의 ID 지정
+        about.setAttribute('id','btn1')
+        products.setAttribute('id','btn2')
+        technology.setAttribute('id','btn3')
+        downloads.setAttribute('id','btn4')
+        etc.setAttribute('id','btn5')
+        
+        // title과 p클래스 지정
+        title.setAttribute('class','title')
+        p.setAttribute('class','title')
+        // div1의 클래스 지정
+        div1.setAttribute('class','c1')
+       
+        // 각 버튼 이름 입력
+        about.textContent = 'About'
+        products.textContent = 'Products'
+        technology.textContent = 'Technology'
+        downloads.textContent = 'Downloads'
+        etc.textContent = 'Etc'
+
+        // 위치지정
+        document.body.append(div1,p,about,products,technology,downloads,etc)
+        div1.append(title,p)
+        
+        // 초기화 상태의 텍스트 출력
+        title.textContent = 'About'
+        p.textContent = 'Custom Software Development Company'
+        div1.style.cssText = 'background-color:red'
+        about.style.cssText = 'background-color:red'
+
+        // 각 버튼 클릭시 텍스트 출력
+        // 색상 변경
+        const di0 = ()=>{
+        about.addEventListener('click',(e)=>{
+            title.textContent = 'About'
+            p.textContent = 'Custom Software Development Company'
+            div1.style.cssText = 'background-color:red'
+            about.style.cssText = 'background-color:red'
+            technology.style.cssText = 'background-color:rgb 85 85 85'
+            downloads.style.cssText = 'background-color:rgb 85 85 85'
+            etc.style.cssText = 'background-color:rgb 85 85 85'
+            products.style.cssText = 'background-color:rgb 85 85 85'
+           setInterval(di1,500)
+        })
+    }
+    const di1 = ()=>{
+        products.addEventListener('click',(e)=>{
+            title.textContent = 'Products'
+            p.textContent ='Building tailored software to address critical needs of global enterprises.'
+            div1.style.cssText = 'background-color:green'
+            products.style.cssText = 'background-color:green'
+            about.style.cssText = 'background-color:rgb 85 85 85'
+            technology.style.cssText = 'background-color:rgb 85 85 85'
+            downloads.style.cssText = 'background-color:rgb 85 85 85'
+            etc.style.cssText = 'background-color:rgb 85 85 85'
+        })
+    }
+        technology.addEventListener('click',(e)=>{
+            title.textContent = 'Technology'
+            p.textContent = 'Machine Learning, Artificial Intelligent, Cloud Platform.'
+            div1.style.cssText = 'background-color:blue'
+            technology.style.cssText = 'background-color:blue'
+            about.style.cssText = 'background-color:rgb 85 85 85'
+            products.style.cssText = 'background-color:rgb 85 85 85'
+            downloads.style.cssText = 'background-color:rgb 85 85 85'
+            etc.style.cssText = 'background-color:rgb 85 85 85'
+        })
+        downloads.addEventListener('click',(e)=>{
+            title.textContent = 'Downloads'
+            p.textContent = 'You can download a free 10 days trial.'
+            div1.style.cssText = 'background-color:coral'
+            downloads.style.cssText = 'background-color:coral'
+            about.style.cssText = 'background-color:rgb 85 85 85'
+            products.style.cssText = 'background-color:rgb 85 85 85'
+            technology.style.cssText = 'background-color:rgb 85 85 85'
+            etc.style.cssText = 'background-color:rgb 85 85 85'
+        })
+        etc.addEventListener('click',(e)=>{
+            title.textContent = 'Etc'
+            p.textContent = 'Everything is fine'
+            div1.style.cssText = 'background-color:pink'
+            etc.style.cssText = 'background-color:pink'
+            about.style.cssText = 'background-color:rgb 85 85 85'
+            products.style.cssText = 'background-color:rgb 85 85 85'
+            downloads.style.cssText = 'background-color:rgb 85 85 85'
+            technology.style.cssText = 'background-color:rgb 85 85 85'
+        })
+        
+        const div_on = _ => {
+                div.appendChild(h1)
+                setTimeout(div2_on, 1000)
+            }
+        
+      })
+    </script>
+    <style>
+        .btn {
+            background-color: #555;
+            color: white;
+            float: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            padding: 14px 16px;
+            font-size: 17px;
+            width: 20%;
+            margin-top: -16px;
+        }
+        .btn:hover {
+            background-color: #777;
+        }
+        .title {
+            color: black;
+            padding: 50px;
+            text-align: center;
+        }
+        .c1 {
+            background-color: red;
+        }
+        .title {
+          color: white;
+        }
+    </style>
+  </head>
+  <body>
+</body>
+</html>
