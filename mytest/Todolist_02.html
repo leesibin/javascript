@@ -23,7 +23,7 @@
             let arr = []; 
             let newid = arr.length+1;
             const  save = localStorage.getItem('todo')
-                function todotext (text){
+                function todotext (){
                 const div00 = document.createElement('div')
                 const checkbox = document.createElement('input')
                 const span = document.createElement('span')
@@ -34,9 +34,9 @@
                 const todoobj = { id: newid, text: textv} //애플리케이션 obj
                 
                 close.innerHTML = '닫기'
-                span.innerHTML = text
-                checkbox.setAttribute('type','checkbox')
                 
+                checkbox.setAttribute('type','checkbox')
+                span.textContent = textv
                 div.appendChild(div00)
                 div00.append(checkbox,span,close)
                 arr.push(todoobj)  

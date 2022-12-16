@@ -1,42 +1,253 @@
-<h1><a href="index.html">WEB</a></h1>
-  <input id="night_day" type="button" value="night" onclick="
-    var target = document.querySelector('body');
-    if(this.value === 'night'){
-      target.style.backgroundColor = 'black';
-      target.style.color = 'white';
-      this.value = 'day';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .hrs {
+            width: 500px;
+        }
+        .write_con {
+            width: 500px;
+        }
+        #icon-span{           
+            position: relative;
+            left: 115px;
+        }
+        #head-span{         
+            position: relative;
+            left: 135px;
+            font-weight: bold;
+        }
+        .middle_input{
+            width: 300px;
+            height: 17px;
+            position: relative;
+            left: 120px;
+            resize: none;
+        }
+        #content-input{
+            width: 300px;
+            height: 200px;
+            position: relative;
+            left: 120px;
+            vertical-align: top;
+            resize: none;
+        }
+        .middle_span{
+            position: relative;
+            vertical-align: top;
+            left: 100px;
+        }
+        #image-select{            
+            position: relative;
+            left: 120px;
+        }
+        #regist-button{           
+            position: relative;
+            left: 170px;
+        }
+        #list-button{           
+            position: relative;
+            left: 180px;
+        }
+        #regist-button{
+            background-color: skyblue
+        }
+        #list-button{
+            background-color: orange;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded',()=>{
+            const write_con = document.createElement('div')
+            const hr01 = document.createElement('hr')
+            const hr02 = document.createElement('hr')
+            const hr03 = document.createElement('hr')
+            const hr04 = document.createElement('hr')
+            const head_con = document.createElement('div')
+            const icon_span = document.createElement('span')
+            const head_span = document.createElement('span')
+            const title_con = document.createElement('div')
+            const title_span = document.createElement('span')
+            const title_input = document.createElement('textarea')
+            const content_con = document.createElement('div')
+            const content_span = document.createElement('span')
+            const content_input = document.createElement('textarea')
+            const writer_con = document.createElement('div')
+            const writer_span = document.createElement('span')
+            const writer_input = document.createElement('textarea')
+            const image_con = document.createElement('div')
+            const image_span = document.createElement('span')
+            const image_select = document.createElement('select')
+            const image_option_none = document.createElement('option')
+            const image_option01 = document.createElement('option')
+            const image_option02 = document.createElement('option')
+            const image_option03 = document.createElement('option')
+            const button_con = document.createElement('div')
+            const regist_button = document.createElement('button')
+            const list_button = document.createElement('button')
 
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while(i < alist.length){
-        alist[i].style.color = 'powderblue';
-        i = i + 1;
-      }
-    } else {
-      target.style.backgroundColor = 'white';
-      target.style.color = 'black';
-      this.value = 'night';
+            document.body.append(write_con)
+            write_con.append(hr01,head_con,hr02,title_con,content_con,writer_con,image_con,hr03,button_con,hr04)
+            head_con.append(icon_span,head_span)
+            title_con.append(title_span,title_input)
+            content_con.append(content_span,content_input)
+            writer_con.append(writer_span,writer_input)
+            image_con.append(image_span,image_select)
+            button_con.append(regist_button,list_button)
+            image_select.append(image_option_none,image_option01,image_option02,image_option03)
 
-      var alist = document.querySelectorAll('a');
-      var i = 0;
-      while(i < alist.length){
-        alist[i].style.color = 'blue';
-        i = i + 1;
-      }
-    }
-  ">
-  <ol>
-    <li><a href="1.html">HTML</a></li>
-    <li><a href="2.html">CSS</a></li>
-    <li><a href="3.html">JavaScript</a></li>
-  </ol>
-  <h2>JavaScript</h2>
-  <p>
-    JavaScript (dʒvəˌskript/[6]), often abbreviated as JS, is a high-level, 
-    dynamic, weakly typed, prototype-based, multi-paradigm, and interpreted programming language. 
-    Alongside HTML and CSS, JavaScript is one of the three core technologies of World Wide Web content production.
-     It is used to make webpages interactive and provide online programs, including video games. 
-     The majority of websites employ it, and all modern web browsers support it without the need for plug-ins by means of a built-in JavaScript engine. 
-     Each of the many JavaScript engines represent a different implementation of JavaScript, all based on the ECMAScript specification,
-      with some engines not supporting the spec fully, and with many engines supporting additional features beyond ECMA.
-  </p>
+            Object.assign(hr01, {
+                className: "hrs"
+            })
+            Object.assign(hr02, {
+                className: "hrs"
+            })
+            Object.assign(hr03, {
+                className: "hrs"
+            })
+            Object.assign(hr04, {
+                className: "hrs"
+            })
+            // 선
+
+            Object.assign(write_con, {
+                className: "write_con"
+            })
+            Object.assign(head_con, {
+                className: "head_con"
+            })
+            Object.assign(icon_span, {
+                id: "icon-span",
+                textContent: "따봉"
+            })
+            Object.assign(head_span, {
+                id: "head-span",
+                textContent: "글작성"
+            })
+            Object.assign(title_con, {
+                className: "middle_con"
+            })
+            Object.assign(title_span, {
+                className: "middle_span",
+                innerHTML: "&emsp;제목"
+            })
+            Object.assign(title_input, {
+                className: "middle_input",
+                placeholder: "제목을 입력하세요."
+            })
+            Object.assign(content_con, {
+                className: "middle_con"
+            })
+            Object.assign(content_span, {
+                className: "middle_span",
+                innerHTML: "&emsp;내용"
+            })
+            Object.assign(content_input, {
+                id : "content-input",
+                placeholder: "내용을 입력하세요."
+            })
+            Object.assign(writer_con, {
+                className: "middle_con"
+            })
+            Object.assign(writer_span, {
+                className: "middle_span",
+                textContent: "작성자"
+            })
+            Object.assign(writer_input, {
+                className: "middle_input",
+                placeholder: "닉네임을 입력하세요."
+            })
+            Object.assign(image_con, {
+                className: "middle_con"
+            })
+            Object.assign(image_span, {
+                className: "middle_span",
+                id: "image-span",
+                textContent: "이미지"
+            })
+            Object.assign(image_select, {
+                id: "image-select"
+            })
+            Object.assign(image_option_none, {
+                class: "image_option",
+                textContent: "이미지 없음"
+            })
+            Object.assign(image_option01, {
+                class: "image_option",
+                textContent: "이미지01"
+            })
+            Object.assign(image_option02, {
+                class: "image_option",
+                textContent: "이미지02"
+            })
+            Object.assign(image_option03, {
+                class: "image_option",
+                textContent: "이미지03"
+            })
+            Object.assign(button_con, {
+                className: "button_con"
+            })
+            Object.assign(regist_button, {
+                id: "regist-button",
+                textContent: "등록"
+            })
+            Object.assign(list_button, {
+                id: "list-button",
+                textContent: "목록"
+            })
+
+
+            
+            function localLoad(){
+                let memory = localStorage.getItem('data_box')
+                return JSON.parse(memory)?? []
+            }
+
+            function localSave(data){
+                let memory = JSON.stringify(data)
+                localStorage.setItem('data_box',memory)
+            }
+
+            const data_box = localLoad()
+            console.log(data_box)
+            let count
+            if (data_box.length == 0) {
+                count = 0
+            } else {
+                count = data_box[data_box.length-1].id_num
+                // 스토리지에서 받은 데이터(배열)의 마지막 요소의 id_num을 받아
+                // count가 겹치지 않게 
+            }
+            
+            regist_button.addEventListener('click',(event)=>{
+                count++
+                let now = new Date();  
+                // id_num 1부터 시작합니다.
+                const data ={
+                    id_num: count,
+                    title: title_input.value,
+                    views: 0,
+                    writer: writer_input.value,
+                    date: now,
+                    content: content_input.value,
+                }
+                // 스토리지에 고유 넘버, 제목, 조회수, 작성자, 시간, 내용 저장
+                data_box.push(data)
+                localSave(data_box)
+                // 스토리지에 저장하고 바로 창 삭제??
+            })
+
+            list_button.addEventListener('click',(event)=>{
+                document.body.removeChild(write_con)
+                // 창 삭제 후 -> 목록 창 생성 or 메인 화면
+            })
+        })
+    </script>
+</head>
+<body>
+</body>
+</html>
