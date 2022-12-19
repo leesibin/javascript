@@ -1,0 +1,50 @@
+#head-op{
+    background-color: #000;
+    width: 500px;
+    height: 100px;
+    display: flex;
+}
+
+#main-op{
+    display: flex;
+}
+#nav-op{
+    background-color: brown;
+    width: 500px;
+    height: 50px;
+}
+
+#aisde-op {
+    background-color: wheat;
+    width: 50px;
+    height: 400px;
+    margin-right: 10px;
+    box-sizing: border-box;
+    padding: 30px;
+}
+
+#section-op {
+    background-color: beige;
+    width: 430px;
+    height: 400px;
+    box-sizing: border-box;
+}
+
+#foot-op{
+    background-color: blueviolet;
+    width: 500px;
+    height: 100px;
+    margin-top: 10px;
+}
+
+/* 이미지 */
+#catimg{
+    width: 300px;
+    height: 300px;
+    position: absolute;
+    top: 220px;
+    left: 150px;
+}
+.span-oo{
+background-color: blue;
+}
