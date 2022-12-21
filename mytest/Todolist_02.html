@@ -20,18 +20,28 @@
 
             document.body.append(input, add, del, div)
 
-            let arr = []; 
-            let newid = arr.length+1;
+            function localload(){
+                    let earr = localStorage.getItem('box')
+                    return JSON.parse(earr) ?? []   //없을땐 빈배열로 생성
+                }
+            function localsave(data){  //date의 내용을 세이트해라
+                 let memory = JSON.stringify(data)
+                localStorage.setItem('box',memory)
+                }
+
+            let data_box = []; 
+            let newid = data_box.length
             const  save = localStorage.getItem('todo')
                 function todotext (){
+                    data_box = localload()
                 const div00 = document.createElement('div')
                 const checkbox = document.createElement('input')
                 const span = document.createElement('span')
                 const close = document.createElement('button')
 
-                
+                newid++
                 const textv = input.value  //input값 지정하기
-                const todoobj = { id: newid, text: textv} //애플리케이션 obj
+                const data = { id: newid, text: textv} //애플리케이션 obj
                 
                 close.innerHTML = '닫기'
                 
@@ -39,9 +49,9 @@
                 span.textContent = textv
                 div.appendChild(div00)
                 div00.append(checkbox,span,close)
-                arr.push(todoobj)  
+                data_box.push(data)  
                 input.value = ''  //입력 후 빈칸
-                console.log(arr)
+                console.log(data_box)
                 // 체크박스
                 checkbox.addEventListener('click', (event) => {
                 if (event.currentTarget.checked) {   //체크가되면
@@ -53,17 +63,15 @@
                 
                 //삭제
                 close.addEventListener('click', () => {
-                    arr.pop()
+                    data_box.pop()
                     div.removeChild(div00)
-                    localStorage.setItem('todo', JSON.stringify(arr))
+                    localsave(data)
                 })
                 //전체삭제
                 del.addEventListener('click',()=>{
                     div.removeChild(div00)
-               
+                    localsave(data)
                 })
-                
-                localStorage.setItem('todo', JSON.stringify(arr))
             }
            
             // 생성
