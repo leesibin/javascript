@@ -13,6 +13,15 @@
             const del = document.createElement('button')
             const div = document.createElement('div')
             
+            const box = JSON.parse(localStorage.getItem('box'))??0; //새로고침했을때 무엇을 배치하냐(box)
+            console.log(box);
+            //box대한 값에대한 조건문(무조건실행)
+            //input.value에 대한 값을 배열로 만들어 출력하게 만들기
+            if(box){
+                for(let i=0; i<box.length;i++){
+
+                }
+            }
 
             input.setAttribute('type', 'text')
             add.innerHTML = '추가'
@@ -22,26 +31,23 @@
 
             function localload(){
                     let earr = localStorage.getItem('box')
-                    return JSON.parse(earr) ?? []   //없을땐 빈배열로 생성
+                    return JSON.parse(earr) ?? []   
                 }
-            function localsave(data){  //date의 내용을 세이트해라
-                 let memory = JSON.stringify(data)
+            function localsave(data_box){  
+                 let memory = JSON.stringify(data_box)
                 localStorage.setItem('box',memory)
                 }
 
             let data_box = []; 
-            let newid = data_box.length
-            const  save = localStorage.getItem('todo')
                 function todotext (){
-                    data_box = localload()
+                data_box = localload()
                 const div00 = document.createElement('div')
                 const checkbox = document.createElement('input')
                 const span = document.createElement('span')
                 const close = document.createElement('button')
 
-                newid++
                 const textv = input.value  //input값 지정하기
-                const data = { id: newid, text: textv} //애플리케이션 obj
+                const data = {text: textv} //애플리케이션 obj
                 
                 close.innerHTML = '닫기'
                 
@@ -51,6 +57,7 @@
                 div00.append(checkbox,span,close)
                 data_box.push(data)  
                 input.value = ''  //입력 후 빈칸
+                localsave(data_box)
                 console.log(data_box)
                 // 체크박스
                 checkbox.addEventListener('click', (event) => {
@@ -65,12 +72,12 @@
                 close.addEventListener('click', () => {
                     data_box.pop()
                     div.removeChild(div00)
-                    localsave(data)
+                    localsave(data_box)
                 })
                 //전체삭제
                 del.addEventListener('click',()=>{
                     div.removeChild(div00)
-                    localsave(data)
+                    localsave(data_box)
                 })
             }
            
@@ -84,8 +91,8 @@
                 }
                 
             })
-           
-          
+            
+            
                
         })
     </script>
