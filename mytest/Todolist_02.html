@@ -12,16 +12,6 @@
             const add = document.createElement('button')
             const del = document.createElement('button')
             const div = document.createElement('div')
-            
-            const box = JSON.parse(localStorage.getItem('box'))??0; //새로고침했을때 무엇을 배치하냐(box)
-            console.log(box);
-            //box대한 값에대한 조건문(무조건실행)
-            //input.value에 대한 값을 배열로 만들어 출력하게 만들기
-            if(box){
-                for(let i=0; i<box.length;i++){
-
-                }
-            }
 
             input.setAttribute('type', 'text')
             add.innerHTML = '추가'
@@ -29,58 +19,63 @@
 
             document.body.append(input, add, del, div)
 
-            function localload(){
-                    let earr = localStorage.getItem('box')
-                    return JSON.parse(earr) ?? []   
-                }
-            function localsave(data_box){  
-                 let memory = JSON.stringify(data_box)
-                localStorage.setItem('box',memory)
-                }
+            // const box = JSON.parse(localStorage.getItem('box'))??0; //새로고침했을때 무엇을 배치하냐(box)
+            // console.log(box);
+            // //box대한 값에대한 조건문(무조건실행)
+            // //input.value에 대한 값을 배열로 만들어 출력하게 만들기
+            // if(box){
+            //     for(let i=0; i<box.length;i++){
 
-            let data_box = []; 
-                function todotext (){
-                data_box = localload()
+            //     }
+            // }
+            let data_box = [];
+            const box = JSON.parse(localStorage.getItem('box')) ?? 0
+            if (box) {
+                box.forEach(v => {
+                    todotext(v)
+                });
+            }
+
+
+            function todotext(data) {
                 const div00 = document.createElement('div')
                 const checkbox = document.createElement('input')
                 const span = document.createElement('span')
                 const close = document.createElement('button')
 
-                const textv = input.value  //input값 지정하기
-                const data = {text: textv} //애플리케이션 obj
-                
+
                 close.innerHTML = '닫기'
-                
-                checkbox.setAttribute('type','checkbox')
-                span.textContent = textv
+
+                checkbox.setAttribute('type', 'checkbox')
+                span.textContent = input.value
                 div.appendChild(div00)
-                div00.append(checkbox,span,close)
-                data_box.push(data)  
+                div00.append(checkbox, span, close)
+                data_box.push({ data: input.value })
                 input.value = ''  //입력 후 빈칸
-                localsave(data_box)
+                localStorage.setItem('box', JSON.stringify(data_box))
                 console.log(data_box)
                 // 체크박스
                 checkbox.addEventListener('click', (event) => {
-                if (event.currentTarget.checked) {   //체크가되면
-                    span.style.cssText = 'text-decoration-line: line-through; color: rgba(0, 0, 0, 0.4);'  //스타일 적용
-                } else {
-                    span.style.cssText = 'text-decoration-line: none;'
-                }
+                    if (event.currentTarget.checked) {   //체크가되면
+                        span.style.cssText = 'text-decoration-line: line-through; color: rgba(0, 0, 0, 0.4);'  //스타일 적용
+                    } else {
+                        span.style.cssText = 'text-decoration-line: none;'
+                    }
                 })
-                
+
                 //삭제
                 close.addEventListener('click', () => {
                     data_box.pop()
                     div.removeChild(div00)
-                    localsave(data_box)
+                    localStorage.setItem('box', JSON.stringify(data_box))
                 })
                 //전체삭제
-                del.addEventListener('click',()=>{
+                del.addEventListener('click', () => {
                     div.removeChild(div00)
-                    localsave(data_box)
+                    localStorage.clear()
                 })
             }
-           
+
             // 생성
             add.addEventListener('click', todotext)
             // 엔터
@@ -89,11 +84,11 @@
                 if (event.keyCode === ENTER) {
                     todotext();
                 }
-                
+
             })
-            
-            
-               
+
+
+
         })
     </script>
 </head>
